@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Home from "@/components/Home";
+import Categories from "@/components/Categories";
+import Slide from "@/components/Slide";
+import Nav from "@/components/Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Nav />
+        <Home />
+        {["1", "2", "3"].map((element, index) => (
+          <Slide key={index} element={element} />
+        ))}
+        {children}
+        <Categories />
+      </body>
     </html>
   );
 }
