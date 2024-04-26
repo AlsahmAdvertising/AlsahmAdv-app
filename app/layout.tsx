@@ -5,6 +5,7 @@ import Home from "@/components/Home";
 import Categories from "@/components/Categories";
 import Slide from "@/components/Slide";
 import Nav from "@/components/Nav";
+import Contact from "@/components/Contact";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         ))}
         {children}
         <Categories />
+        <Contact />
       </body>
     </html>
   );
