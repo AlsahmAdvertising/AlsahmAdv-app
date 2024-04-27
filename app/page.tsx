@@ -1,7 +1,11 @@
-export default function Home() {
+import SlideList from "@/components/SlideList";
+import Home from "@/components/Home";
+
+export default function page() {
   return (
-    <section>
-      <h1>Categories / route</h1>
-    </section>
+    <>
+      <Home />
+      <SlideList />
+    </>
   );
 }

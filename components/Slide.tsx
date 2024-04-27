@@ -14,7 +14,7 @@ const Slide = ({
   return (
     <section id="do not touch">
       <div className="w-[100%] h-[100vh]">
-        <div className={`${backgroundImage} h-full bg-cover relative`}>
+        <div className={`${backgroundImage} h-full bg-cover relative -z-10`}>
           <div className="absolute top-[35%] left-[60%] ">
             <h1 className="text-white  ">{name}</h1>
             <p className="text-white ">{description}</p>

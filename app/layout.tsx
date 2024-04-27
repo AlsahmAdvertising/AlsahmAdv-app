@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Home from "@/components/Home";
-import Categories from "@/components/Categories";
 import Nav from "@/components/Nav";
 import Contact from "@/components/Contact";
 import SlideList from "@/components/SlideList";
@@ -23,10 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Nav />
-        <Home />
-        <SlideList />
         {children}
-        <Categories />
         <Contact />
       </body>
     </html>

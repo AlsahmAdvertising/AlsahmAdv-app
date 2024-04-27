@@ -17,6 +17,7 @@ const Home = () => {
     setWidth(window.innerWidth);
   };
   if (useIsClient()) window.onresize = reportWin;
+  console.log(width);
 
   return (
     <section id="do not touch">

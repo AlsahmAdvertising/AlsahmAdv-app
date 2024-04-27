@@ -1,5 +1,11 @@
 const Categories = () => {
-  return <div>Categories /categories route</div>;
+  return (
+    <section>
+      <div className="w-full h-[100vh]">
+        <div>Categories /categories route</div>
+      </div>
+    </section>
+  );
 };
 
 export default Categories;
