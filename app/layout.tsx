@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Contact from "@/components/Contact";
-
+import "dotenv/config";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
