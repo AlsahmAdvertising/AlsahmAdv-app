@@ -20,7 +20,7 @@ const Home = () => {
   console.log(width);
 
   return (
-    <section id="do not touch">
+    <section className="snap-start  w-full h-screen">
       {width > 560 ? (
         <div className="h-[100vh] overflow-hidden flex items-center justify-center relative -z-10 ">
           <iframe

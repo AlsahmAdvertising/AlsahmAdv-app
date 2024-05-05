@@ -2,7 +2,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="h-[100vh] w-[100%] bg-slate-700 flex items-center justify-center"
+      className=" w-full h-screen bg-slate-700 flex items-center justify-center snap-start"
     >
       <div className="group duration-500 skew-x-6 mr-20">
         <div className="relative rounded-2xl w-72 h-36 bg-zinc-800 text-gray-50 flex flex-col justify-center items-center gap-1 before:-skew-x-12  before:rounded-2xl  before:absolute before:content['']  before:bg-neutral-700 before:right-3 before:top-0 before:w-72 before:h-32 before:-z-10">

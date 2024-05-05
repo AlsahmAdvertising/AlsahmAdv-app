@@ -18,10 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} `}>
         <Nav />
-        {children}
-        <Contact />
+
+        <div className="snap-y snap-mandatory overflow-y-scroll w-full h-screen ">
+          {children}
+          <Contact />
+        </div>
       </body>
     </html>
   );
