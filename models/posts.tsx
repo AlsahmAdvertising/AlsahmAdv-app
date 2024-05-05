@@ -2,10 +2,11 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const postsSchema = new Schema({
+  category: String,
   title: String,
   description: String,
   image: String,
 });
-const Post = mongoose.model("Post", postsSchema);
+const Post = mongoose.models.Post || mongoose.model("Post", postsSchema);
 
-export default mongoose.models.Post || Post;
+export default Post;
