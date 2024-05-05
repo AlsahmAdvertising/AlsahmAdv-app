@@ -15,20 +15,22 @@ const Page = () => {
   >();
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
-  const hello = async function () {
-    try {
-      const res = await fetch(`/api/posts?category=${category}`, {
-        cache: "no-store",
-      });
-      const data = await res.json();
-      setPost(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   useEffect(() => {
+    const hello = async function () {
+      try {
+        const res = await fetch(`/api/posts?category=${category}`, {
+          cache: "no-store",
+        });
+        const data = await res.json();
+
+        setPost(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     hello();
-  }, []);
+  }, [category]);
 
   return (
     <div className="w-full flex items-center flex-col justify-center overflow-hidden h-[75%]">
