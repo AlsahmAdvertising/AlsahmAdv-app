@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="h-[100vh] w-[100%] grid bg-[url('../assets/background-images/bg.jpg')]"
+      className="h-[100vh] w-[100%] grid bg-[url('../assets/background-images/bg.jpg')] snap-start"
     >
       <div
         onClick={() => {

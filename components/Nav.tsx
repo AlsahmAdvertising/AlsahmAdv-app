@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <div className="fixed w-full flex justify-between text-white">
+    <div className="fixed  w-full flex justify-between text-white">
       <Link
         href="/"
         className="border-2 border-white bg-slate-800 h-10 w-20 text-center py-2"
@@ -11,7 +11,7 @@ const Nav = () => {
       </Link>
       <div className="flex justify-between w-64">
         <Link
-          href="/categories"
+          href="/categories?category=Potato1"
           className="border-2 border-white bg-slate-800 h-10 w-32 text-center py-2"
         >
           Categories

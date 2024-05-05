@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Home from "@/components/Home";
 import Nav from "@/components/Nav";
 import Contact from "@/components/Contact";
-import SlideList from "@/components/SlideList";
-
+import "dotenv/config";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,10 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} `}>
         <Nav />
-        {children}
-        <Contact />
+
+        <div className="snap-y snap-mandatory overflow-y-scroll w-full h-screen ">
+          {children}
+          <Contact />
+        </div>
       </body>
     </html>
   );
