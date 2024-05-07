@@ -11,6 +11,13 @@ const config: Config = {
       dropShadow: {
         custom: "0 35px 35px rgba(0, 0, 0, 0.75)",
       },
+      colors: {
+        myDarkBlue: "#10403B",
+        secondary: "#8AA6A3",
+        myGray: "#BFBFBF",
+        mySeaBlue: "#127369",
+        myLightblue: "#2BE0C2",
+      },
     },
   },
   plugins: [],

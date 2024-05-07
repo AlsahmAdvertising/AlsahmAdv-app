@@ -19,11 +19,8 @@ const Page = () => {
   useEffect(() => {
     const hello = async function () {
       try {
-        const res = await fetch(`/api/posts?category=${category}`, {
-          cache: "no-store",
-        });
+        const res = await fetch(`/api/posts?category=${category}`);
         const data = await res.json();
-
         setPost(data);
       } catch (error) {
         console.log(error);
@@ -44,6 +41,7 @@ const Page = () => {
                 alt="content"
                 width={300}
                 height={150}
+                className="rounded-md max-w-sm mx-auto h-auto shadow-none transition-shadow duration-600 cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-2xl hover:scale-105"
               />
             );
           })}

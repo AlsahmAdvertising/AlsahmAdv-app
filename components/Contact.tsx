@@ -148,10 +148,10 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="w-full h-[30%]  bg-slate-800 border-t-white border-t-2 self-end flex justify-around items-center">
-        <p className="text-white font-thin">Phone number</p>
-        <p className="text-white font-thin">Location link</p>
-        <p className="text-white font-thin">Facebook</p>
+      <div className="w-full h-[30%]  bg-gradient-to-r to-myLightblue from-myDarkBlue border-t-myDarkBlue border-t-2 self-end flex justify-around items-center">
+        <p className="text-white font-semibold text-lg">Phone number</p>
+        <p className="text-white font-semibold text-lg ">Location link</p>
+        <p className="text-white font-semibold text-lg ">Facebook</p>
       </div>
     </section>
   );

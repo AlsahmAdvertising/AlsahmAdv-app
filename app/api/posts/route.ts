@@ -7,9 +7,7 @@ export const GET = async (req: Request) => {
   const category = searchParams.get("category") || "";
   try {
     await connectToDB();
-    console.log("10");
     const post = await Post.find({ category: category });
-    console.log("12");
 
     return new NextResponse(JSON.stringify(post), { status: 200 });
   } catch (error) {
