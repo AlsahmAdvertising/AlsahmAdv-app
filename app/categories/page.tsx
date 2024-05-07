@@ -42,8 +42,8 @@ const Page = () => {
                 key={index}
                 src={ele.image}
                 alt="content"
-                width={300}
-                height={150}
+                width={450}
+                height={200}
               />
             );
           })}
