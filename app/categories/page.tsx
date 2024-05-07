@@ -19,11 +19,8 @@ const Page = () => {
   useEffect(() => {
     const hello = async function () {
       try {
-        const res = await fetch(`/api/posts?category=${category}`, {
-          cache: "no-store",
-        });
+        const res = await fetch(`/api/posts?category=${category}`);
         const data = await res.json();
-
         setPost(data);
       } catch (error) {
         console.log(error);
@@ -34,7 +31,7 @@ const Page = () => {
 
   return (
     <div className="w-full flex items-center flex-col justify-center overflow-hidden h-[75%]">
-      <div className="grid grid-cols-4 h-full gap-6 overflow-y-scroll p-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 h-full gap-6 overflow-y-scroll p-6">
         {post &&
           post.map((ele, index) => {
             return (
@@ -44,6 +41,7 @@ const Page = () => {
                 alt="content"
                 width={450}
                 height={200}
+                className="rounded-md  mx-auto h-auto shadow-none transition-shadow duration-600 cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-2xl hover:scale-105"
               />
             );
           })}
