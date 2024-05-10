@@ -39,9 +39,9 @@ const Page = () => {
                 key={index}
                 src={ele.image}
                 alt="content"
-                width={300}
-                height={150}
-                className="rounded-md max-w-sm mx-auto h-auto shadow-none transition-shadow duration-600 cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-2xl hover:scale-105"
+                width={450}
+                height={200}
+                className="rounded-md  mx-auto h-auto shadow-none transition-shadow duration-600 cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-2xl hover:scale-105"
               />
             );
           })}

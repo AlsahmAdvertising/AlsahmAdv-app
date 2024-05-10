@@ -17,7 +17,6 @@ const Home = () => {
     setWidth(window.innerWidth);
   };
   if (useIsClient()) window.onresize = reportWin;
-  console.log(width);
 
   return (
     <section className="snap-start  w-full h-screen">
