@@ -15,18 +15,20 @@ const CatNav = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0].name);
 
   return (
-    <div className="w-full flex items-center justify-evenly gap-6  h-[9%] border-2 border-black rounded-full">
-      {tabs.map((tab, index) => {
-        return (
-          <CatTabs
-            key={index}
-            tab={tab}
-            selectedTab={selectedTab}
-            setSelectedTab={setSelectedTab}
-          />
-        );
-      })}
-    </div>
+    <section className="w-[100%] flex   pt-16 pb-4 md:px-[10%]">
+      <div className="w-full flex items-center bg-gradient-to-tl to to-mySeaBlue from-myDarkBlue justify-evenly gap-6   border-2 border-myDarkBlue  md:rounded-full">
+        {tabs.map((tab, index) => {
+          return (
+            <CatTabs
+              key={index}
+              tab={tab}
+              selectedTab={selectedTab}
+              setSelectedTab={setSelectedTab}
+            />
+          );
+        })}
+      </div>
+    </section>
   );
 };
 

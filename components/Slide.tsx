@@ -15,14 +15,13 @@ const Slide = ({
     <section className="snap-start w-full h-screen">
       <div className="w-[100%] h-[100vh] ">
         <div className={`${backgroundImage} h-full bg-cover relative `}>
-          <div className="absolute top-[35%] left-[60%] pr-7">
-            <h1 className="text-8xl text-transparent bg-clip-text bg-gradient-to-r to-myLightblue from-myDarkBlue font-semibold	pb-4	">
+          <div className="absolute top-[35%] max-w-[80%] left-[4%] pr-2 md:left-[10%] md:max-w-[60%] ">
+            <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r to-myLightblue from-myDarkBlue font-bold	pb-8 sm:text-8xl md:pb-4	">
               {name}
             </h1>
-            <p className="text-myDarkBlue pb-4 font-semibold text-xl p">
+            <p className="text-myDarkBlue pb-8 font-semibold text-lg pl-3 md:text-2xl max-w-[85%] md:pb-4 md:text-bold">
               {description}
             </p>
-
             <button className="flex group items-center justify-end text-myLto-myLightblue bg-white hover:before:bg-gradient-to-r to-myLightblue from-myDarkBlue rounded-2xl relative h-[60px] w-40 overflow-hidden border border-myDarkBlue bg-primary px-3 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:transition-all before:duration-500 hover:text-white hover:shadow-myDarkBlue hover:before:left-0 hover:before:w-full">
               <span className="relative z-10">Swipe</span>
               <svg
