@@ -128,13 +128,13 @@ const Contact = () => {
               Send
             </button>
           </form>
-          <button
-            className={`bg-rose-500 text-red-800 w-12 md:w-14 xl:w-16 aspect-square rounded-full z-40 text-[10px] md:text-[14px] xl:text-[18px] flex items-center justify-center font-semibold [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] transition-all duration-1000 border-4 border-rose-900 ${
+          <p
+            className={`bg-rose-500 select-none text-red-800 w-12 md:w-14 xl:w-16 aspect-square rounded-full z-40 text-[10px] md:text-[14px] xl:text-[18px] flex items-center justify-center font-semibold [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] transition-all duration-1000 border-4 border-rose-900 ${
               selected ? "rotate-180 scale-0 opacity-0" : ""
             }`}
           >
             Email
-          </button>
+          </p>
           <div
             className={`transition-all  delay-200 ease-out bg-neutral-800 absolute w-full h-full  ${
               selected
