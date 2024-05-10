@@ -17,15 +17,17 @@ const CatTabs = ({
   return (
     <>
       <button
-        className={` flex items-center justify-center flex-col  ${
-          selectedTab === tab.name ? "underline" : ""
+        className={` flex items-center  text-white justify-center flex-col  ${
+          selectedTab === tab.name
+            ? "underline font-semibold text-gray-50 "
+            : ""
         }`}
         onClick={() => {
           setSelectedTab(tab.name);
           router.push(`/categories?category=${tab.name}`);
         }}
       >
-        <Image src={tab.icon} width={30} height={30} alt="icons" />
+        <Image src={tab.icon} width={30} height={30} alt="icons" className="" />
         {tab.name}
       </button>
     </>

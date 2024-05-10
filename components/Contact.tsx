@@ -48,19 +48,16 @@ const Contact = () => {
         }
       );
   }
-
+  // bg-[url('../assets/background-images/bg.jpg')]
   return (
-    <section
-      id="contact"
-      className="h-[100vh] w-[100%] grid bg-[url('../assets/background-images/bg.jpg')] snap-start"
-    >
+    <section id="contact" className="h-[100vh] w-[100%] grid   snap-start">
       <div
         onClick={() => {
           setSelected((prev) => !prev);
         }}
         className="self-end xl:self-end justify-self-center drop-shadow-custom"
       >
-        <div className="relative bg-black w-[400px] md:w-[600px] xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
+        <div className="relative bg-black w-[250px] md:w-[600px] xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
           <div className="flex flex-col items-center py-5 justify-start bg-white w-[99%] h-[99%] absolute"></div>
           <form
             ref={form}
