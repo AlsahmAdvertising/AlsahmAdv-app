@@ -48,41 +48,33 @@ const Contact = () => {
         }
       );
   }
-  // bg-[url('../assets/background-images/bg.jpg')]
   return (
     <section id="contact" className="h-[100vh] w-[100%] grid   snap-start">
       <div
         onClick={() => {
           setSelected((prev) => !prev);
         }}
-        className="self-end xl:self-end justify-self-center drop-shadow-custom"
+        className="self-end xl:self-end justify-self-center drop-shadow-custom_black"
       >
-        <div className="relative bg-black w-[250px] md:w-[600px] xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
+        <div className="relative bg-black w-[95vw] md:w-[600px] xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
           <div className="flex flex-col items-center py-5 justify-start bg-white w-[99%] h-[99%] absolute"></div>
           <form
             ref={form}
             onSubmit={sendEmail}
             className={`transition-all bg-white ease-in-out flex flex-col items-center py-5 justify-start w-[99%] h-[99%] absolute ${
-              selected ? "-translate-y-16 duration-[2000ms]" : " duration-300"
+              selected
+                ? "-translate-y-20 md:-translate-y-16 duration-[2000ms]"
+                : " duration-300"
             }`}
           >
             <p
-              className="text-xl sm:text-2xl font-semibold text-gray-500 font-serif"
+              className="text-xl sm:text-2xl font-semibold text-neutral-800"
               onClick={(e) => {
                 e.stopPropagation();
               }}
             >
               Send email
             </p>
-            <label
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-              htmlFor="user_email"
-              className="text-xs sm:text-sm font-semibold text-gray-500 font-serif"
-            >
-              Email
-            </label>
             <input
               onChange={(e) => setEmailInput(e.target.value)}
               value={emailInput}
@@ -95,16 +87,6 @@ const Contact = () => {
               className="w-60"
               required
             ></input>
-
-            <label
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-              className="text-xs sm:text-sm font-semibold text-gray-500 font-serif"
-              htmlFor="message"
-            >
-              Content
-            </label>
             <textarea
               onChange={(e) => setContentInput(e.target.value)}
               value={contentInput}
@@ -117,6 +99,7 @@ const Contact = () => {
               className="mt-2 w-60 resize-none"
             ></textarea>
             <button
+              className="text-neutral-800 border-b-2 hover:border-neutral-800"
               disabled={disable}
               onClick={(e) => {
                 e.stopPropagation();
@@ -147,8 +130,8 @@ const Contact = () => {
 
       <div className="w-full h-[30%]  bg-gradient-to-r to-myLightblue from-myDarkBlue border-t-myDarkBlue border-t-2 self-end flex justify-around items-center">
         <p className="text-white font-semibold text-lg">Phone number</p>
-        <p className="text-white font-semibold text-lg ">Location link</p>
-        <p className="text-white font-semibold text-lg ">Facebook</p>
+        <p className="text-white font-semibold text-lg">Location link</p>
+        <p className="text-white font-semibold text-lg">Facebook</p>
       </div>
     </section>
   );

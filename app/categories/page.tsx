@@ -31,7 +31,7 @@ const Page = () => {
 
   return (
     <div className="w-full flex items-center flex-col justify-center overflow-hidden h-[75%]">
-      <div className="grid gap-10 grid-cols-1 h-full md:gap-10 lg:gap-16 overflow-y-scroll p-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-10 pt-10 grid-cols-1 h-full md:gap-10 lg:gap-16 overflow-y-scroll p-6 md:grid-cols-2 lg:grid-cols-3">
         {post &&
           post.map((ele, index) => {
             return (
@@ -41,7 +41,7 @@ const Page = () => {
                 alt="content"
                 width={450}
                 height={200}
-                className="rounded-md  mx-auto h-auto shadow-none transition-shadow duration-600 cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-2xl hover:scale-105"
+                className="rounded-xl  mx-auto h-auto shadow-none transition-shadow duration-200 ease-in-out cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-3xl hover:scale-105"
               />
             );
           })}
