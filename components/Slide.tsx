@@ -22,7 +22,7 @@ const Slide = ({
             <p className="text-myDarkBlue pb-8 font-semibold text-lg pl-3 md:text-2xl max-w-[85%] md:pb-4 md:text-bold">
               {description}
             </p>
-            <button className="flex group items-center justify-end text-myLto-myLightblue bg-white hover:before:bg-gradient-to-r to-myLightblue from-myDarkBlue rounded-2xl relative h-[60px] w-40 overflow-hidden border border-myDarkBlue bg-primary px-3 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:transition-all before:duration-500 hover:text-white hover:shadow-myDarkBlue hover:before:left-0 hover:before:w-full">
+            <button className="flex group items-center justify-end text-myLto-myLightblue bg-white hover:before:bg-gradient-to-r to-myLightblue from-myDarkBlue rounded-2xl relative h-[60px] w-40 overflow-hidden border border-myDarkBlue bg-primary px-3 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:transition-all before:duration-500 hover:text-white hover:drop-shadow-custom_seaBlue hover:before:left-0 hover:before:w-full">
               <span className="relative z-10">Swipe</span>
               <svg
                 viewBox="0 0 24 24"

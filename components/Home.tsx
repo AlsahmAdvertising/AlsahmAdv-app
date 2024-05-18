@@ -27,7 +27,9 @@ const Home = () => {
             allow="autoplay"
             className="w-[300%] h-[129%] absolute"
           ></iframe>
-          <h1 className="z-10 text-white  text-5xl font-bold">AlsahmAdv</h1>
+          <h1 className="z-10 text-white  text-5xl font-bold select-none">
+            AlsahmAdv
+          </h1>
         </div>
       ) : (
         <div className="w-[100%] h-[100vh] overflow-hidden flex items-center justify-center relative -z-10">
