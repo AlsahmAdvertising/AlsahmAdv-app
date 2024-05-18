@@ -3,8 +3,7 @@ const { Schema } = mongoose;
 
 const postsSchema = new Schema({
   category: String,
-  title: String,
-  description: String,
+  publicID: String,
   image: String,
 });
 const Post = mongoose.models.Post || mongoose.model("Post", postsSchema);
