@@ -17,7 +17,7 @@ const Contact = () => {
     if (sent) return;
     setSent(true);
     const formRef = form.current || "";
-    // enable recaptcha
+
     email(formRef);
   };
   function email(formRef: string) {

@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Contact from "@/components/Contact";
 import "dotenv/config";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,10 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} `}>
         <Nav />
 
-        <div className="snap-y snap-mandatory overflow-y-scroll w-full h-screen ">
-          {children}
-          <Contact />
-        </div>
+        {children}
       </body>
     </html>
   );

@@ -1,5 +1,31 @@
 import Slide from "./Slide";
+import { useEffect, useState } from "react";
+import Test from "./test";
+import Home from "./Home";
+import Contact from "./Contact";
 const SlideList = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = (e: WheelEvent) => {
+      const delta = e.deltaY;
+      if (delta > 0 && currentPage < 4) {
+        console.log(currentPage);
+        setCurrentPage(currentPage + 1);
+      } else if (delta < 0 && currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+        console.log(currentPage);
+      }
+    };
+    const timeout = setTimeout(() => {
+      window.addEventListener("wheel", handleScroll);
+    }, 700);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      clearTimeout(timeout);
+    };
+  }, [currentPage]);
   const elements = [
     {
       name: "FIRST SLIDE",
@@ -25,14 +51,19 @@ const SlideList = () => {
   ];
   return (
     <>
-      {elements.map((element, index) => (
-        <Slide
+      <Contact />
+      {elements.toReversed().map((element, index) => (
+        <Test
+          index={index}
+          length={elements.length}
           key={index}
           name={element.name}
           description={element.description}
           backgroundImage={element.backgroundImage}
+          currentPage={currentPage}
         />
       ))}
+      <Home currentPage={currentPage} />
     </>
   );
 };

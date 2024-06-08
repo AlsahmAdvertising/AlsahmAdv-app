@@ -8,7 +8,7 @@ function useIsClient() {
   }, []);
   return isClient;
 }
-const Home = () => {
+const Home = ({ currentPage }: { currentPage: number }) => {
   const [width, setWidth] = useState(0);
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -19,26 +19,36 @@ const Home = () => {
   if (useIsClient()) window.onresize = reportWin;
 
   return (
-    <section className="snap-start  w-full h-screen">
+    <section
+      className={`bg-black z-50 page-section w-full overflow-hidden absolute top-0 left-0  page-section ${
+        currentPage >= 1 ? "-translate-y-[100%]" : ""
+      }`}
+    >
       {width > 560 ? (
-        <div className="h-[100vh] overflow-hidden flex items-center justify-center relative -z-10 ">
+        <div className="h-[100vh] overflow-hidden flex items-center justify-center relative  ">
           <iframe
             src="https://player.vimeo.com/video/939643388?autoplay=1&color=ff0179&title=0&byline=0&portrait=0&loop=1&controls=0&muted=1&quality=1080p"
             allow="autoplay"
             className="w-[300%] h-[129%] absolute"
           ></iframe>
-          <h1 className="z-10 text-white  text-5xl font-bold select-none">
-            AlsahmAdv
-          </h1>
+          <div className="flex items-center justify-center z-10 w-full h-screen">
+            <h1 className=" text-white  text-5xl font-bold select-none">
+              AlsahmAdv
+            </h1>
+          </div>
         </div>
       ) : (
-        <div className="w-[100%] h-[100vh] overflow-hidden flex items-center justify-center relative -z-10">
+        <div className="w-[100%] h-[100vh]  flex items-center justify-center relative ">
           <iframe
             src="https://player.vimeo.com/video/939621491?autoplay=1&color=ff0179&title=0&byline=0&portrait=0&loop=1&controls=0&muted=1&quality=1080p"
             allow="autoplay"
             className="w-[140%] h-[105%] absolute"
           ></iframe>
-          <h1 className="z-10 text-white  text-5xl font-bold">AlsahmAdv</h1>
+          <div className="flex items-center justify-center w-full h-screen  z-10">
+            <h1 className=" text-white  text-5xl font-bold select-none">
+              AlsahmAdv
+            </h1>
+          </div>
         </div>
       )}
     </section>
