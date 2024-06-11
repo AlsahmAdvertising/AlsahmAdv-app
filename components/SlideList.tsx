@@ -1,11 +1,21 @@
+"use client";
 import Slide from "./Slide";
-import { useEffect, useState } from "react";
-import Test from "./test";
+import { ReactNode, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Home from "./Home";
 import Contact from "./Contact";
-const SlideList = () => {
+const SlideList = ({ Categories }: { Categories: React.ReactNode }) => {
   const [currentPage, setCurrentPage] = useState(0);
-
+  const pathname = usePathname() ?? "";
+  const [page, setPage] = useState(pathname);
+  const [category, setCategory] = useState(false);
+  useEffect(() => {
+    if (pathname === "/categories") {
+      setCategory(true);
+    } else if (pathname === "/") {
+      setCategory(false);
+    }
+  }, [page, pathname]);
   useEffect(() => {
     const handleScroll = (e: WheelEvent) => {
       const delta = e.deltaY;
@@ -52,18 +62,24 @@ const SlideList = () => {
   return (
     <>
       <Contact />
-      {elements.toReversed().map((element, index) => (
-        <Test
-          index={index}
-          length={elements.length}
-          key={index}
-          name={element.name}
-          description={element.description}
-          backgroundImage={element.backgroundImage}
-          currentPage={currentPage}
-        />
-      ))}
-      <Home currentPage={currentPage} />
+      {category ? (
+        Categories
+      ) : (
+        <>
+          {elements.toReversed().map((element, index) => (
+            <Slide
+              index={index}
+              length={elements.length}
+              key={index}
+              name={element.name}
+              description={element.description}
+              backgroundImage={element.backgroundImage}
+              currentPage={currentPage}
+            />
+          ))}
+          <Home currentPage={currentPage} />
+        </>
+      )}
     </>
   );
 };

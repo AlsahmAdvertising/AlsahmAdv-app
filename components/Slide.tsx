@@ -1,24 +1,25 @@
-"use client";
-
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Slide = ({
   name,
   backgroundImage,
   description,
+  length,
   index,
-  slideArr,
+  currentPage,
 }: {
   name: string;
   backgroundImage: string;
   description: string;
+  length: number;
   index: number;
-  slideArr: string[];
+  currentPage: number;
 }) => {
   return (
     <section
-      id={`${index}`}
-      className={`absolute  top-0 left-0 w-full h-screen off ${slideArr[index]}`}
+      className={`page-section w-full  absolute top-0 left-0  page-section ${
+        currentPage >= length - index + 1 ? "-translate-y-[100%]" : ""
+      }`}
     >
       <div className="w-[100%] h-[100vh] ">
         <div className={`${backgroundImage} h-full bg-cover relative `}>
@@ -29,13 +30,13 @@ const Slide = ({
             <p className="text-myDarkBlue pb-8 font-semibold text-lg pl-3 md:text-2xl max-w-[85%] md:pb-4 md:text-bold">
               {description}
             </p>
-            <button className="flex group items-center justify-end text-myLto-myLightblue bg-white hover:before:bg-gradient-to-r to-myLightblue from-myDarkBlue rounded-2xl relative h-[60px] w-40 overflow-hidden border border-myDarkBlue bg-primary px-3 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:transition-all before:duration-500 hover:text-white hover:drop-shadow-custom_seaBlue hover:before:left-0 hover:before:w-full">
-              <span className="relative z-10">Swipe</span>
+            <button className="flex group items-center justify-end text-myLto-myLightblue bg-white hover:before:bg-gradient-to-r to-myLightblue from-myDarkBlue rounded-2xl relative h-[60px] w-40 overflow-hidden border border-myDarkBlue bg-primary px-3 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0  before:h-full before:w-0 before:bg-gradient-to-r before:transition-all before:duration-500 hover:text-white hover:drop-shadow-custom_seaBlue hover:before:left-0 hover:before:w-full">
+              <span className="relative ">Swipe</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="z-10  h-7 relative ml-8"
+                className="  h-7 relative ml-8"
               >
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
@@ -62,3 +63,4 @@ const Slide = ({
 };
 
 export default Slide;
+//

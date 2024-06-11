@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Contact from "@/components/Contact";
 import "dotenv/config";
+import SlideList from "@/components/SlideList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} `}>
         <Nav />
-
-        {children}
+        <SlideList Categories={children} />
       </body>
     </html>
   );
