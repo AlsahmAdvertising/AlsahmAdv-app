@@ -37,3 +37,31 @@
 .page-section {
   transition: all 0.7s ease-in-out;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.category-slide {
+  display: inline-block;
+  animation: 15s slide linear infinite;
+}
+.category {
+  white-space: nowrap;
+  overflow-x: auto;
+  user-select: none;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.category:hover .category-slide {
+  animation-play-state: paused;
+}

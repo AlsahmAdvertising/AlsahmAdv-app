@@ -17,34 +17,18 @@ const CatTabs = ({
   return (
     <>
       <button
-        className={` flex items-center  text-white justify-center flex-col`}
+        className={` md:w-44 w-24 m-3  hover:text-red-400 md:text-xl  font-black from-stone-800 to-neutral-400 bg-gradient-to-r bg-clip-text text-transparent  `}
         onClick={() => {
           setSelectedTab(tab.name);
           router.push(`/categories?category=${tab.name}`);
         }}
       >
-        <div className="relative group w-16 h-16 flex items-center justify-center p-4 border-2 border-white rounded-full">
-          <div
-            className={`absolute group-hover:visible ${
-              selectedTab === tab.name ? "visible" : "invisible"
-            }`}
-          >
-            {tab.name}
-          </div>
-
-          <Image
-            src={tab.icon}
-            width={30}
-            height={30}
-            alt="icons"
-            className={`absolute group-hover:invisible ${
-              selectedTab === tab.name ? "invisible" : "visible"
-            }`}
-          />
-        </div>
+        {tab.name}
       </button>
     </>
   );
 };
 
 export default CatTabs;
+{
+}

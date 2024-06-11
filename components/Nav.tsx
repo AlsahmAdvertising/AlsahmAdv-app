@@ -1,26 +1,45 @@
+"use client";
 import Link from "next/link";
-{
-}
+import { useEffect, useState } from "react";
+import React from "react";
+import { usePathname } from "next/navigation";
+
 const Nav = () => {
+  const [categoryNav, setCategoryNav] = useState(false);
+  const pathname = usePathname() ?? "";
+  const [page, setPage] = useState(pathname);
+
+  useEffect(() => {
+    if (pathname === "/categories") {
+      setCategoryNav(true);
+    } else if (pathname === "/") {
+      setCategoryNav(false);
+    }
+  }, [page, pathname]);
+
   return (
-    <div className="fixed z-[99999] w-full flex justify-between  text-white  pr-4 pt-6 pl-4 gap-4 md:pt-10 md:px-12">
+    <div
+      className={` fixed md:my-8 md:px-10 my-3 px-5  w-full flex justify-between   font-serif   z-[99999] text-white drop-shadow-custom_black_center`}
+    >
       <Link
+        onClick={() => setPage(pathname)}
         href="/"
-        className="border-2 border-myDarkBlue bg-gradient-to-r to-mySeaBlue from-myDarkBlue  w-[33%] text-center py-2 rounded-2xl hover:shadow-2xl  hover:drop-shadow-custom_seaBlue hover:bg-secondary hover:scale-105  duration-150 sm:w-40 	"
+        className="font-black text-xl sm:text-3xl hover:text-slate-400  md:text-6xl"
       >
         Home
       </Link>
-      <div className="flex justify-between w-[66%] gap-4 sm:w-[33%]  	">
-        <Link
-          href="/categories?category=Potato1"
-          className="border-2 border-myDarkBlue bg-gradient-to-r to-mySeaBlue from-myDarkBlue  w-[50%] text-center py-2 rounded-2xl hover:shadow-2xl  hover:drop-shadow-custom_seaBlue hover:bg-secondary hover:scale-105  duration-150 	"
-        >
-          Categories
-        </Link>
-        <a
-          href="#contact"
-          className="border-2 border-myDarkBlue bg-gradient-to-r to-mySeaBlue from-myDarkBlue  w-[50%] text-center py-2 rounded-2xl hover:shadow-2xl  hover:drop-shadow-custom_seaBlue hover:bg-secondary hover:scale-105  duration-150 "
-        >
+
+      <div className="flex md:font-black text-base sm:text-lg mt-1 gap-x-2 md:gap-x-8 md:text-3xl 	">
+        {!categoryNav && (
+          <Link
+            onClick={() => setPage(pathname)}
+            href="/categories?category=Potato1"
+            className=" hover:text-slate-400  	"
+          >
+            Categories
+          </Link>
+        )}
+        <a href="#contact" className=" hover:text-slate-400   ">
           Contact Us
         </a>
       </div>
