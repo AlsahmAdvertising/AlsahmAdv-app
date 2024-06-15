@@ -13,6 +13,7 @@ const Home = ({ currentPage }: { currentPage: number }) => {
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
+
   const reportWin = () => {
     setWidth(window.innerWidth);
   };

@@ -17,7 +17,7 @@ const CatTabs = ({
   return (
     <>
       <button
-        className={` md:w-44 w-24 m-3  hover:text-red-400 md:text-xl  font-black from-stone-800 to-neutral-400 bg-gradient-to-r bg-clip-text text-transparent  `}
+        className={` md:w-44 w-24 m-3 drop-shadow-custom  hover:text-[#57a19b] md:text-xl  font-black from-[#8b8f8d] to-[#adccce] bg-gradient-to-r bg-clip-text text-transparent  `}
         onClick={() => {
           setSelectedTab(tab.name);
           router.push(`/categories?category=${tab.name}`);
