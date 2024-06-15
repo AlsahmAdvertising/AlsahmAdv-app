@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       dropShadow: {
         custom_black: "0 35px 35px rgba(0, 0, 0, 0.75)",
-        custom_black_center: "0 0 35px rgba(0, 0, 0, 0.75)",
+        custom_black_center: "0 0 10px rgba(0, 0, 0, 0.75)",
         custom_seaBlue: "0 0 15px rgba(18, 115, 105, 0.75)",
       },
       colors: {

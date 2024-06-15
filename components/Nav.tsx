@@ -24,7 +24,7 @@ const Nav = () => {
       <Link
         onClick={() => setPage(pathname)}
         href="/"
-        className="font-black text-xl sm:text-3xl hover:text-slate-400  md:text-6xl"
+        className="font-black text-xl sm:text-3xl  md:text-6xl"
       >
         Home
       </Link>
@@ -34,12 +34,12 @@ const Nav = () => {
           <Link
             onClick={() => setPage(pathname)}
             href="/categories?category=Potato1"
-            className=" hover:text-slate-400  	"
+            className=" 	"
           >
             Categories
           </Link>
         )}
-        <a href="#contact" className=" hover:text-slate-400   ">
+        <a href="#contact" className="   ">
           Contact Us
         </a>
       </div>

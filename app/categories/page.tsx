@@ -41,7 +41,7 @@ const Page = () => {
                 alt="content"
                 width={450}
                 height={200}
-                className="rounded-xl  mx-auto h-auto shadow-none transition-shadow duration-200 ease-in-out cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-3xl hover:scale-105"
+                className="rounded-xl  mx-auto h-[250px] shadow-none transition-shadow duration-200 ease-in-out cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-3xl hover:scale-105"
               />
             );
           })}

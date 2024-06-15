@@ -49,19 +49,19 @@ const Contact = () => {
       );
   }
   return (
-    <section id="contact" className="h-[100vh] w-[100%] grid   snap-start">
+    <section id="contact" className="h-[100vh] w-[100%] grid snap-start">
       <div
         onClick={() => {
           setSelected((prev) => !prev);
         }}
-        className="self-end xl:self-end justify-self-center drop-shadow-custom_black"
+        className="self-end xl:self-end  overflow-visible justify-self-center drop-shadow-custom_black"
       >
-        <div className="relative bg-black w-[95vw] md:w-[600px] xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
-          <div className="flex flex-col items-center py-5 justify-start bg-white w-[99%] h-[99%] absolute"></div>
+        <div className="relative bg-black w-[95vw] md:w-[600px]  overflow-visible xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
+          <div className="flex flex-col items-center  py-5 justify-start bg-white w-[99%] h-[99%] absolute"></div>
           <form
             ref={form}
             onSubmit={sendEmail}
-            className={`transition-all bg-white ease-in-out flex flex-col items-center py-5 justify-start w-[99%] h-[99%] absolute ${
+            className={`transition-all bg-white  overflow-visible ease-in-out flex flex-col items-center py-5 justify-start w-[99%] h-[99%] absolute ${
               selected
                 ? "-translate-y-20 md:-translate-y-16 duration-[2000ms]"
                 : " duration-300"
