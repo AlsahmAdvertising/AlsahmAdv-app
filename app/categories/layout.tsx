@@ -3,7 +3,7 @@ import React from "react";
 
 const layout = ({ children }: { children: React.JSX.Element }) => {
   return (
-    <section className="  flex items-end flex-col justify-center   w-full h-screen ">
+    <section className="  flex items-end flex-col justify-center bg-[#0e1618] w-full h-screen ">
       <CatNav />
       {children}
     </section>

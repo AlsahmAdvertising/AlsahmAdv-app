@@ -30,21 +30,23 @@ const Page = () => {
   }, [category]);
 
   return (
-    <div className="w-full flex items-center flex-col justify-center overflow-hidden h-[75%]">
-      <div className="grid gap-10 pt-10 grid-cols-1 h-full md:gap-10 lg:gap-16 overflow-y-scroll p-6 md:grid-cols-2 lg:grid-cols-3">
-        {post &&
-          post.map((ele, index) => {
-            return (
-              <Image
-                key={index}
-                src={ele.image}
-                alt="content"
-                width={450}
-                height={200}
-                className="rounded-xl  mx-auto h-[250px] shadow-none transition-shadow duration-200 ease-in-out cursor-pointer hover:shadow-2xl hover:shadow-gray-800 hover:rounded-3xl hover:scale-105"
-              />
-            );
-          })}
+    <div className="w-full relative  flex flex-col items-center overflow-hidden my-2 rounded-3xl -mt-6  -mb-14 h-[85%]">
+      <div className=" flex relative w-[85%] flex-col bg-[#061011bd] h-[100%]  items-center border-4 border-[#030607a2] drop-shadow-catPage my-8  rounded-3xl  md:gap-10  ">
+        <div className="grid gap-5 pt-5 grid-cols-1 md:px-8  min-w-[350px] w-full my-8  md:gap-10 pb-32 overflow-y-scroll lg:grid-cols-3 p-6 md:grid-cols-2 ">
+          {post &&
+            post.map((ele, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={ele.image}
+                  alt="content"
+                  width={400}
+                  height={230}
+                  className="rounded-xl fade-in drop-shadow-custom mx-auto w-[350px] h-[200px] lg:w-[420px] lg:h-[240px] object-center"
+                />
+              );
+            })}
+        </div>
       </div>
     </div>
   );
