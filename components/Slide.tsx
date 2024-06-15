@@ -36,7 +36,7 @@ const Slide = ({
             </p>
             <button
               onClick={() => (window.location.href = path)}
-              className="flex group items-center font-bold justify-end hover:border-white hover:border  text-[#04254bc0] bg-white hover:before:bg-gradient-to-r to-[#2574709c] from-[#14355c]  rounded-xl relative h-12 w-48 overflow-hidden border-[2.5px] border-[#04254bc0] bg-primary px-3 shadow-xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0  before:h-full before:w-0 before:bg-gradient-to-r before:transition-all before:duration-300 hover:text-white  hover:before:left-0 hover:before:w-[105%]"
+              className="flex group items-center font-bold justify-end hover:border-white hover:border  text-[#04254bc0] hover:before:bg-gradient-to-r to-[#2574709c] from-[#14355c]  rounded-xl relative h-12 w-48 overflow-hidden border-[2.5px] border-[#04254bc0] bg-white px-3 shadow-xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0  before:h-full before:w-0 before:bg-gradient-to-r before:transition-all before:duration-300 hover:text-white  hover:before:left-0 hover:before:w-[105%]"
             >
               <span className="relative ">MORE</span>
               <svg

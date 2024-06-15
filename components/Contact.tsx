@@ -128,11 +128,25 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="w-full h-[30%]  bg-gradient-to-r to-myLightblue from-myDarkBlue border-t-myDarkBlue border-t-2 self-end flex justify-around items-center">
-        <p className="text-white font-semibold text-lg">Phone number</p>
-        <p className="text-white font-semibold text-lg">Location link</p>
-        <p className="text-white font-semibold text-lg">Facebook</p>
-      </div>
+      <footer className="w-full h-[30%]  bg-gradient-to-r to- from-primary border-t-primary border-t-2 self-end flex justify-around items-center">
+        <p className="text-white drop-shadow-custom font-semibold text-lg">
+          Phone: 0911232441
+        </p>
+        <a
+          target="blank"
+          href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
+          className="text-white drop-shadow-custom font-semibold text-lg underline"
+        >
+          Location link
+        </a>
+        <a
+          target="blank"
+          href="https://www.facebook.com/zuck/"
+          className="text-white drop-shadow-custom font-semibold text-lg underline"
+        >
+          Facebook
+        </a>
+      </footer>
     </section>
   );
 };

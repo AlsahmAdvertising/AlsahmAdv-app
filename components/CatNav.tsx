@@ -20,7 +20,7 @@ export default function CatNav() {
 
   return (
     <>
-      <div className="flex drop-shadow-sm  w-screen  mt-9 z-[99999]  justify-center lg:mr-6 ">
+      <div className="flex drop-shadow-sm  w-screen  mt-9 z-[999]  justify-center lg:mr-6 ">
         <div
           className="category  items-centers w-[60%] lg:w-[50%]  "
           ref={itemRef}

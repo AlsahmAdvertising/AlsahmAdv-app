@@ -17,6 +17,7 @@ const config: Config = {
         catPage: "1spx 5px 2px rgba(0, 0, 0, 1)",
       },
       colors: {
+        primary: "#3e7099",
         myDarkBlue: "#10403B",
         secondary: "#8AA6A3",
         myGray: "#BFBFBF",

@@ -4,72 +4,21 @@ import { ReactNode, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Home from "./Home";
 import Contact from "./Contact";
-import path from "path";
-const SlideList = ({ Categories }: { Categories: React.ReactNode }) => {
+import Nav from "./Nav";
+import Categories from "./Categories";
+import Progress from "./Progress";
+const SlideList = ({ OldCategories }: { OldCategories: React.ReactNode }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const pathname = usePathname() ?? "";
-
+  const [isCategories, setIsCategories] = useState(true);
   const [page, setPage] = useState(pathname);
   const [category, setCategory] = useState(false);
-  useEffect(() => {
-    if (pathname === "/categories") {
-      setCategory(true);
-    } else if (pathname === "/") {
-      setCategory(false);
-    }
-  }, [page, pathname]);
-  useEffect(() => {
-    let start: number;
-    let end: number;
-    const handleStart = (e: TouchEvent) => {
-      const touchMove = e.touches[0];
-      start = touchMove.clientY;
-    };
-    const handleEnd = (e: TouchEvent) => {
-      const touchMove = e.changedTouches[0];
-      end = touchMove.clientY;
-      if (start - end > 0 && currentPage < 4) {
-        setCurrentPage(currentPage + 1);
-      } else if (start - end < 0 && currentPage > 0) {
-        setCurrentPage(currentPage - 1);
-      }
-    };
-    const timeoutID = setTimeout(() => {
-      window.addEventListener("touchstart", handleStart);
-      window.addEventListener("touchend", handleEnd);
-    }, 300);
 
-    return () => {
-      window.removeEventListener("touchstart", handleStart);
-      window.removeEventListener("touchend", handleEnd);
-      clearTimeout(timeoutID);
-    };
-  }, [currentPage]);
-  useEffect(() => {
-    const handleScroll = (e: WheelEvent) => {
-      const delta = e.deltaY;
-      if (delta > 0 && currentPage < 4) {
-        setCurrentPage(currentPage + 1);
-      } else if (delta < 0 && currentPage > 0) {
-        setCurrentPage(currentPage - 1);
-      }
-    };
-    const timeout = setTimeout(() => {
-      window.addEventListener("wheel", handleScroll);
-    }, 700);
+  const setContactPage = () => {
+    setCurrentPage(elements.length + 1);
+    setIsCategories(false);
+  };
 
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-      clearTimeout(timeout);
-    };
-  }, [currentPage]);
-  const classNames = [
-    "-translate-x-full",
-    "-translate-x-3/4",
-    "-translate-x-1/2",
-    "-translate-x-1/4",
-    "-translate-x-0",
-  ];
   const elements = [
     {
       name: "Category 1",
@@ -96,19 +45,73 @@ const SlideList = ({ Categories }: { Categories: React.ReactNode }) => {
       path: "/categories?category=Potato3",
     },
   ];
+
+  useEffect(() => {
+    if (pathname === "/categories") {
+      setCategory(true);
+    } else if (pathname === "/") {
+      setCategory(false);
+    }
+  }, [page, pathname]);
+
+  useEffect(() => {
+    let start: number;
+    let end: number;
+    const handleStart = (e: TouchEvent) => {
+      const touchMove = e.touches[0];
+      start = touchMove.clientY;
+    };
+    const handleEnd = (e: TouchEvent) => {
+      const touchMove = e.changedTouches[0];
+      end = touchMove.clientY;
+      if (start - end > 0 && currentPage < elements.length + 1) {
+        setCurrentPage(currentPage + 1);
+      } else if (start - end < 0 && currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+        setIsCategories(true);
+      }
+    };
+    const timeoutID = setTimeout(() => {
+      window.addEventListener("touchstart", handleStart);
+      window.addEventListener("touchend", handleEnd);
+    }, 300);
+
+    const handleScroll = (e: WheelEvent) => {
+      const delta = e.deltaY;
+      if (delta > 0 && currentPage < elements.length + 1) {
+        setCurrentPage(currentPage + 1);
+      } else if (delta < 0 && currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+        setIsCategories(true);
+      }
+    };
+    const timeout = setTimeout(() => {
+      window.addEventListener("wheel", handleScroll);
+    }, 700);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      clearTimeout(timeout);
+      window.removeEventListener("touchstart", handleStart);
+      window.removeEventListener("touchend", handleEnd);
+      clearTimeout(timeoutID);
+    };
+  }, [currentPage, elements.length]);
+
+  useEffect(() => {}, [currentPage]);
+
   console.log(currentPage);
   return (
-    <>
-      {/* <Contact /> */}
+    <main>
+      <Nav setContactPage={setContactPage} setCurrentPage={setCurrentPage} />
+      <Progress currentPage={currentPage} />
+
+      <Contact />
+
       {category ? (
-        Categories
+        <Categories isCategories={isCategories} />
       ) : (
         <>
-          <nav className="bg-transparent  transition-all  h-3 sticky top-0 z-[99999] ">
-            <span
-              className={`absolute bg-white border border-[#1b6152] h-[66.67%] rounded-3xl  w-full bottom-0 z[99999] left-0 ${classNames[currentPage]}   duration-1000 ease-in-out  transition-all  `}
-            ></span>
-          </nav>
           {elements.reverse().map((element, index) => (
             <Slide
               index={index}
@@ -124,7 +127,7 @@ const SlideList = ({ Categories }: { Categories: React.ReactNode }) => {
           <Home currentPage={currentPage} />
         </>
       )}
-    </>
+    </main>
   );
 };
 

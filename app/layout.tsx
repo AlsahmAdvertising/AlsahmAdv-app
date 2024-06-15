@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import Contact from "@/components/Contact";
 import "dotenv/config";
 import SlideList from "@/components/SlideList";
 
@@ -20,9 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} `}>
-        <Nav />
-        <SlideList Categories={children} />
+      <body className={`${inter.className}`}>
+        <SlideList OldCategories={children} />
       </body>
     </html>
   );
