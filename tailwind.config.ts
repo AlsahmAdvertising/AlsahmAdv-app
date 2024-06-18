@@ -24,6 +24,9 @@ const config: Config = {
         mySeaBlue: "#127369",
         myLightblue: "#2BE0C2",
       },
+      aspectRatio: {
+        mobile: "9 / 16",
+      },
     },
   },
   plugins: [],
