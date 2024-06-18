@@ -11,8 +11,7 @@ function useIsClient() {
 const Home = ({ currentPage }: { currentPage: number }) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
-
-  const desktop = width > 520;
+  const desktop = width > 490;
 
   useEffect(() => {
     setHeight(window.innerHeight);
@@ -24,13 +23,11 @@ const Home = ({ currentPage }: { currentPage: number }) => {
     setHeight(window.innerHeight);
   };
   if (useIsClient()) window.onresize = reportWin;
-
-  console.log("ratio", width / height);
-  console.log("desktop", desktop);
+  console.log("resized");
 
   return (
     <section
-      className={`bg-black z-50 page-section w-screen h-screen flex items-center justify-center overflow-hidden absolute top-0 left-0  page-section ${
+      className={`bg-black z-50 page-section w-full h-full flex items-center justify-center overflow-hidden absolute top-0 left-0  page-section ${
         currentPage >= 1 ? "-translate-y-[100%]" : ""
       }`}
     >
@@ -41,7 +38,7 @@ const Home = ({ currentPage }: { currentPage: number }) => {
             : "https://player.vimeo.com/video/939621491?autoplay=1&color=ff0179&title=0&byline=0&portrait=0&loop=1&controls=0&muted=1&quality=1080p"
         }
         allow="autoplay"
-        className={`absolute border border-red-500 ${
+        className={`absolute ${
           desktop
             ? width / height >= 1.77777777778
               ? "w-full aspect-video"

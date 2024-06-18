@@ -10,14 +10,14 @@ const Nav = ({
   setCurrentPage,
 }: {
   setCurrentPage: Dispatch<SetStateAction<number>>;
-  setContactPage: () => void;
+  setContactPage: (state: boolean) => void;
 }) => {
   const [categoryNav, setCategoryNav] = useState(false);
   const pathname = usePathname() ?? "";
   const [page, setPage] = useState(pathname);
 
   useEffect(() => {
-    if (pathname === "/categories") {
+    if (pathname.includes("categories")) {
       setCategoryNav(true);
     } else if (pathname === "/") {
       setCategoryNav(false);
@@ -41,17 +41,29 @@ const Nav = ({
       </Link>
 
       <div className="flex justify-center items-center md:font-black   gap-x-2 md:gap-x-8  	">
-        <Link
-          onClick={() => setPage(pathname)}
-          href="/categories?category=Potato1"
-          className="hover:text-slate-400"
-        >
-          Categories
-        </Link>
+        {pathname.includes("categories") ? (
+          <button
+            onClick={() => {
+              setCurrentPage(0);
+              setContactPage(true);
+            }}
+            className="hover:text-slate-400"
+          >
+            Categories
+          </button>
+        ) : (
+          <Link
+            onClick={() => setPage(pathname)}
+            href="/categories?category=Potato1"
+            className="hover:text-slate-400"
+          >
+            Categories
+          </Link>
+        )}
 
         <button
           className="hover:text-slate-400"
-          onClick={() => setContactPage()}
+          onClick={() => setContactPage(false)}
         >
           Contact Us
         </button>

@@ -14,9 +14,9 @@ const SlideList = ({ OldCategories }: { OldCategories: React.ReactNode }) => {
   const [page, setPage] = useState(pathname);
   const [category, setCategory] = useState(false);
 
-  const setContactPage = () => {
+  const setContactPage = (state: boolean) => {
     setCurrentPage(elements.length + 1);
-    setIsCategories(false);
+    setIsCategories(state);
   };
 
   const elements = [
