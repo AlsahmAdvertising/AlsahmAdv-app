@@ -31,7 +31,7 @@ const Categories = ({ isCategories }: { isCategories: boolean }) => {
 
   return (
     <section
-      className={`flex items-end flex-col justify-center bg-[#0e1618] h-screen page-section w-full    absolute top-0 left-0  page-section  ${
+      className={`flex items-end flex-col justify-center bg-[#0e1618] h-screen page-section w-full  z-10  absolute top-0 left-0  page-section  ${
         !isCategories ? "-translate-y-[100%]" : ""
       }`}
     >

@@ -19,7 +19,7 @@ const Slide = ({
 }) => {
   return (
     <section
-      className={`page-section w-full    absolute top-0 left-0  page-section ${
+      className={`page-section w-full z-10   absolute top-0 left-0  page-section ${
         currentPage >= length - index + 1 ? "-translate-y-[100%]" : ""
       }`}
     >

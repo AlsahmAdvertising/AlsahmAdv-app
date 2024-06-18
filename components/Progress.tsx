@@ -13,9 +13,9 @@ const Progress = ({ currentPage }: { currentPage: number }) => {
 
   return (
     !pathname.includes("categories") && (
-      <nav className="bg-transparent transition-all h-3 sticky top-0 z-[99999]">
+      <nav className="bg-transparent transition-all h-2 sticky top-0 z-[99999]">
         <span
-          className={`absolute bg-white border border-[#1b6152] h-[66.67%] rounded-3xl  w-full bottom-0 left-0 ${classNames[currentPage]} duration-1000 ease-in-out  transition-all  `}
+          className={`absolute bg-white border border-[#1b6152] h-full rounded-3xl  w-full bottom-0 left-0 ${classNames[currentPage]} duration-1000 ease-in-out  transition-all  `}
         ></span>
       </nav>
     )

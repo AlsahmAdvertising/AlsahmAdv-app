@@ -51,13 +51,40 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="h-[100vh] w-[100%] bg-[#0e1618] grid snap-start"
+      className="h-[100vh] w-[100%] bg-[#00030F] flex justify-center items-center relative "
     >
+      <div id="notebook-paper" className="h-[95%] ">
+        <header className="">
+          <h1>Fancy Title</h1>
+        </header>
+        <div id="content">
+          <div className="">
+            <p className="text-white drop-shadow-custom font-semibold text-lg">
+              Phone: 0911232441
+              <a
+                target="blank"
+                href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
+                className="text-white drop-shadow-custom font-semibold text-lg underline"
+              >
+                Location link
+              </a>
+              <a
+                target="blank"
+                href="https://www.facebook.com/zuck/"
+                className="text-white drop-shadow-custom font-semibold text-lg underline"
+              >
+                Facebook
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div
         onClick={() => {
           setSelected((prev) => !prev);
         }}
-        className="self-end xl:self-end  overflow-visible justify-self-center drop-shadow-custom_black"
+        className="  overflow-visible translate-y-12 drop-shadow-custom_black absolute z-[5]"
       >
         <div className="relative bg-black w-[95vw] md:w-[600px]  overflow-visible xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
           <div className="flex flex-col items-center  py-5 justify-start bg-white w-[99%] h-[99%] absolute"></div>
@@ -119,19 +146,19 @@ const Contact = () => {
             Email
           </p>
           <div
-            className={`transition-all  delay-200 ease-out bg-gray-400 absolute w-full h-full  ${
+            className={`transition-all  delay-200 ease-out bg-neutral-800 absolute w-full h-full  ${
               selected
                 ? "duration-100 [clip-path:polygon(50%_0%,_100%_0,_0_0)]"
                 : "duration-1000 [clip-path:polygon(50%_50%,_100%_0,_0_0)]"
             }`}
           ></div>
-          <div className="lft transition-all duration-700 absolute w-full h-full bg-[#7F8899] [clip-path:polygon(50%_50%,_0_0,_0_100%)]"></div>
-          <div className="rgt transition-all duration-700 absolute w-full h-full bg-gray-400 [clip-path:polygon(50%_50%,_100%_0,_100%_100%)]"></div>
-          <div className="btm transition-all duration-700 absolute w-full h-full bg-[#7F8899] [clip-path:polygon(50%_50%,_100%_100%,_0_100%)]"></div>
+          <div className="lft transition-all duration-700 absolute w-full h-full bg-neutral-900 [clip-path:polygon(50%_50%,_0_0,_0_100%)]"></div>
+          <div className="rgt transition-all duration-700 absolute w-full h-full bg-neutral-800 [clip-path:polygon(50%_50%,_100%_0,_100%_100%)]"></div>
+          <div className="btm transition-all duration-700 absolute w-full h-full bg-neutral-900 [clip-path:polygon(50%_50%,_100%_100%,_0_100%)]"></div>
         </div>
       </div>
 
-      <footer className="w-full h-[30%]  bg-gradient-to-r to- from-primary border-t-primary border-t-2 self-end flex justify-around items-center">
+      {/* <footer className="w-full h-[30%]  bg-gradient-to-tl from-[#00030F] to-primary border-t-primary border-t-2 self-end flex justify-around items-center">
         <p className="text-white drop-shadow-custom font-semibold text-lg">
           Phone: 0911232441
         </p>
@@ -149,7 +176,7 @@ const Contact = () => {
         >
           Facebook
         </a>
-      </footer>
+      </footer> */}
     </section>
   );
 };
