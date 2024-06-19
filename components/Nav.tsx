@@ -26,7 +26,7 @@ const Nav = ({
 
   return (
     <div
-      className={`fixed md:px-10 px-5 w-full flex justify-between font-serif z-[999] ${"text-white md:py-8 drop-shadow-custom"} `}
+      className={`fixed pt-4 md:pt-2 md:px-10 px-5 w-full flex justify-between font-serif z-[999] ${"text-white md:py-8 drop-shadow-custom"} `}
     >
       <Link
         onClick={() => {

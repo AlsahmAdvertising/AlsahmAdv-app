@@ -51,32 +51,32 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="h-[100vh] w-[100%] bg-[#00030F] flex justify-center items-center relative "
+      className="h-[100vh] w-[100%] bg-[#0e1618] flex justify-center items-end pb-[4%] sm:pb-[1%] relative "
     >
-      <div id="notebook-paper" className="h-[95%] ">
-        <header className="">
-          <h1>Fancy Title</h1>
+      <div id="notebook-paper" className="h-[75%] sm:h-[85%] w-[80%] ">
+        <header className="h-1/5 w-full bg-[#8A8A84] absolute top-0 left-0 z-[2]">
+          <h1 className="text-white drop-shadow-custom font-semibold text-2xl md:text-4xl mt-9 md:mt-8 ml-[13%]">
+            Fancy Title
+          </h1>
         </header>
-        <div id="content">
-          <div className="">
-            <p className="text-white drop-shadow-custom font-semibold text-lg">
-              Phone: 0911232441
-              <a
-                target="blank"
-                href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
-                className="text-white drop-shadow-custom font-semibold text-lg underline"
-              >
-                Location link
-              </a>
-              <a
-                target="blank"
-                href="https://www.facebook.com/zuck/"
-                className="text-white drop-shadow-custom font-semibold text-lg underline"
-              >
-                Facebook
-              </a>
-            </p>
-          </div>
+        <div className="text-white drop-shadow-custom font-semibold text-2xl md:text-4xl mt-9 md:mt-8 ">
+          <p>
+            Phone: 0911232441
+            <a
+              target="blank"
+              href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
+              className="text-white font-semibold text-lg underline"
+            >
+              Location link
+            </a>
+            <a
+              target="blank"
+              href="https://www.facebook.com/zuck/"
+              className="text-white  font-semibold text-lg underline"
+            >
+              Facebook
+            </a>
+          </p>
         </div>
       </div>
 
@@ -84,21 +84,21 @@ const Contact = () => {
         onClick={() => {
           setSelected((prev) => !prev);
         }}
-        className="  overflow-visible translate-y-12 drop-shadow-custom_black absolute z-[5]"
+        className="  overflow-visible sm:bottom-[13%] bottom-[15%] translate-y-12 rounded-2xl drop-shadow-custom_black absolute z-[5]"
       >
-        <div className="relative bg-black w-[95vw] md:w-[600px]  overflow-visible xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
-          <div className="flex flex-col items-center  py-5 justify-start bg-white w-[99%] h-[99%] absolute"></div>
+        <div className="relative bg-[#413f3f] select-none rounded-2xl   w-[55vw] md:w-[40vw] sm:w-[45vws] max-w-[260px] md:max-w-[450px] overflow-visible group transition-all duration-700 aspect-video flex items-center justify-center">
+          <div className="flex flex-col items-center  rounded-2xl justify-start bg-[#413f3f] w-[99%] h-[99%] absolute"></div>
           <form
             ref={form}
             onSubmit={sendEmail}
-            className={`transition-all bg-white  overflow-visible ease-in-out flex flex-col items-center py-5 justify-start w-[99%] h-[99%] absolute ${
+            className={`transition-all bg-white   rounded-2xl  overflow-hidden ease-in-out  flex flex-col items-center  justify-start w-[90%] h-[99%] absolute ${
               selected
-                ? "-translate-y-20 md:-translate-y-16 duration-[2000ms]"
+                ? "md:-translate-y-[52%] -translate-y-[52%] duration-[2000ms]"
                 : " duration-300"
             }`}
           >
             <p
-              className="text-xl sm:text-2xl font-semibold text-neutral-800"
+              className="text-[10px] md:text-[16px] mt-2 h-[18%]  font-semibold text-[#0e1618]"
               onClick={(e) => {
                 e.stopPropagation();
               }}
@@ -114,7 +114,7 @@ const Contact = () => {
               name="user_email"
               type="email"
               placeholder="Email"
-              className="w-60"
+              className="w-[70%] md:w-[80%] h-[13%] my-3 text-[10px] md:text-[12px] "
               required
             ></input>
             <textarea
@@ -126,10 +126,10 @@ const Contact = () => {
               }}
               name="message"
               placeholder="Content"
-              className="mt-2 w-60 resize-none"
+              className="w-[70%] md:w-[80%] h-[25%] pb-3 text-[10px] md:text-[12px] "
             ></textarea>
             <button
-              className="text-neutral-800 border-b-2 hover:border-neutral-800"
+              className="text-[#0e1618] text-[10px]  border-b-2 h-[23%] hover:border-[#0e1618] hover:font-semibold"
               disabled={disable}
               onClick={(e) => {
                 e.stopPropagation();
@@ -139,25 +139,24 @@ const Contact = () => {
             </button>
           </form>
           <p
-            className={`bg-rose-500 select-none text-red-800 w-12 md:w-14 xl:w-16 aspect-square rounded-full z-40 text-[10px] md:text-[14px] xl:text-[18px] flex items-center justify-center font-semibold [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] transition-all duration-1000 border-4 border-rose-900 ${
+            className={`bg-[#742525] select-none text-[#a5a5a5] w-[20%] max-w-[40px] aspect-square rounded-full z-40 text-[60%] flex items-center justify-center font-semibold [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] transition-all duration-1000 border-4 border-[#491414] ${
               selected ? "rotate-180 scale-0 opacity-0" : ""
             }`}
           >
             Email
           </p>
           <div
-            className={`transition-all  delay-200 ease-out bg-neutral-800 absolute w-full h-full  ${
+            className={`transition-all rounded-t-2xl  delay-200 ease-out bg-[#151f22] absolute w-full h-full  ${
               selected
                 ? "duration-100 [clip-path:polygon(50%_0%,_100%_0,_0_0)]"
                 : "duration-1000 [clip-path:polygon(50%_50%,_100%_0,_0_0)]"
             }`}
           ></div>
-          <div className="lft transition-all duration-700 absolute w-full h-full bg-neutral-900 [clip-path:polygon(50%_50%,_0_0,_0_100%)]"></div>
-          <div className="rgt transition-all duration-700 absolute w-full h-full bg-neutral-800 [clip-path:polygon(50%_50%,_100%_0,_100%_100%)]"></div>
-          <div className="btm transition-all duration-700 absolute w-full h-full bg-neutral-900 [clip-path:polygon(50%_50%,_100%_100%,_0_100%)]"></div>
+          <div className="lft transition-all  rounded-l-2xl  duration-700 absolute w-full h-full bg-[#0e1618] [clip-path:polygon(50%_50%,_0_0,_0_100%)]"></div>
+          <div className="rgt transition-all   rounded-r-2xl duration-700 absolute w-full h-full bg-[#151f22] [clip-path:polygon(50%_50%,_100%_0,_100%_100%)]"></div>
+          <div className="btm transition-all rounded-b-2xl  duration-700 absolute w-full h-full bg-[#0e1618] [clip-path:polygon(50%_50%,_100%_100%,_0_100%)]"></div>
         </div>
       </div>
-
       {/* <footer className="w-full h-[30%]  bg-gradient-to-tl from-[#00030F] to-primary border-t-primary border-t-2 self-end flex justify-around items-center">
         <p className="text-white drop-shadow-custom font-semibold text-lg">
           Phone: 0911232441
