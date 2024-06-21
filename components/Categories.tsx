@@ -47,8 +47,8 @@ const Categories = ({ isCategories }: { isCategories: boolean }) => {
                     src={ele.image}
                     alt="content"
                     width={400}
-                    height={230}
-                    className="rounded-xl fade-in drop-shadow-custom mx-auto w-[350px] h-[200px] lg:w-[420px] lg:h-[240px] object-center"
+                    height={220}
+                    className="rounded-xl fade-in drop-shadow-custom mx-auto w-[400px] h-[220px] object-center"
                   />
                 );
               })}

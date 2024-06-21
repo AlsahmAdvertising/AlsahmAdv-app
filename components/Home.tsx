@@ -9,14 +9,9 @@ function useIsClient() {
   return isClient;
 }
 const Home = ({ currentPage }: { currentPage: number }) => {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(window?.innerWidth || 0);
+  const [height, setHeight] = useState(window?.innerHeight || 0);
   const desktop = width > 490;
-
-  useEffect(() => {
-    setHeight(window.innerHeight);
-    setWidth(window.innerWidth);
-  }, []);
 
   const reportWin = () => {
     setWidth(window.innerWidth);
@@ -49,7 +44,7 @@ const Home = ({ currentPage }: { currentPage: number }) => {
         }`}
       ></iframe>
 
-      <h1 className="text-white z-10 text-5xl font-bold select-none">
+      <h1 className="text-white z-10 h-full w-full flex justify-center items-center text-5xl font-bold select-none">
         AlsahmAdv
       </h1>
     </section>

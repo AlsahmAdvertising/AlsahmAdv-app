@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -45,6 +48,20 @@ body {
   scrollbar-width: none;
 }
 
+.hand-written {
+  font-family: "Playwrite NG Modern", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.hand-written-italic {
+  font-family: "Playwrite NZ", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
 .category-slide {
   display: inline-block;
   animation: 10s slide linear infinite;
@@ -67,8 +84,11 @@ body {
 }
 .overlay {
   border-image: linear-gradient(
-      hsla(78, 9%, 38%, 0.336),
-      hsla(60, 2%, 27%, 0.2)
+      hsla(197, 100%, 53%, 0.35),
+      hsla(197, 100%, 53%, 0.3),
+      hsla(197, 100%, 53%, 0.2),
+      hsla(197, 100%, 53%, 0.1),
+      hsla(197, 100%, 53%, 0)
     )
     fill 1;
 }
@@ -82,11 +102,7 @@ body {
 
 #notebook-paper {
   z-index: 1;
-  background: linear-gradient(
-    to bottom,
-    rgb(138, 138, 132) 29px,
-    #a7a2a204 1px
-  );
+  background: linear-gradient(to bottom, #c9c9c3 29px, #a7a2a204 1px);
   /* margin: 50px auto; */
   background-size: 100% 30px;
   position: relative;
@@ -111,6 +127,6 @@ body {
     left: 10%;
     height: 100%;
     width: 1px;
-    background: #db4034;
+    background: #742525;
   }
 }

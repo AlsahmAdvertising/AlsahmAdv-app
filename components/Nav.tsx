@@ -47,7 +47,7 @@ const Nav = ({
               setCurrentPage(0);
               setContactPage(true);
             }}
-            className="hover:text-slate-400"
+            className="hover:text-primary"
           >
             Categories
           </button>
@@ -55,14 +55,14 @@ const Nav = ({
           <Link
             onClick={() => setPage(pathname)}
             href="/categories?category=Potato1"
-            className="hover:text-slate-400"
+            className="hover:text-primary"
           >
             Categories
           </Link>
         )}
 
         <button
-          className="hover:text-slate-400"
+          className="hover:text-primary"
           onClick={() => setContactPage(false)}
         >
           Contact Us

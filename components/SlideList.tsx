@@ -102,7 +102,7 @@ const SlideList = ({ OldCategories }: { OldCategories: React.ReactNode }) => {
 
   console.log(currentPage);
   return (
-    <main>
+    <main className="">
       <Nav setContactPage={setContactPage} setCurrentPage={setCurrentPage} />
       <Progress currentPage={currentPage} />
 
