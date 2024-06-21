@@ -26,7 +26,7 @@ const Nav = ({
 
   return (
     <div
-      className={`fixed pt-4 md:pt-2 md:px-10 px-5 w-full flex justify-between font-serif z-[999] ${"text-white md:py-8 drop-shadow-custom"} `}
+      className={`fixed pt-4 md:pt-2 md:px-10 px-5 w-full flex justify-between font-serif z-[999] text-white md:py-8 `}
     >
       <Link
         onClick={() => {
@@ -35,34 +35,34 @@ const Nav = ({
         }}
         href="/"
         className={`font-black 
-      ${"hover:text-primary text-xl sm:text-3xl md:text-5xl ld:text-6xl"}`}
+      ${" drop-shadow-custom text-xl sm:text-3xl md:text-5xl ld:text-6xl"}`}
       >
         Home
       </Link>
 
-      <div className="flex justify-center items-center md:font-black   gap-x-2 md:gap-x-8  	">
+      <div className="flex justify-center items-center md:font-black drop-shadow-custom  gap-x-2 md:gap-x-8  	">
         {pathname.includes("categories") ? (
           <button
             onClick={() => {
               setCurrentPage(0);
               setContactPage(true);
             }}
-            className="hover:text-primary"
+            className=""
           >
-            Categories
+            Our work
           </button>
         ) : (
           <Link
             onClick={() => setPage(pathname)}
             href="/categories?category=Potato1"
-            className="hover:text-primary"
+            className=" drop-shadow-custom"
           >
-            Categories
+            Our work
           </Link>
         )}
 
         <button
-          className="hover:text-primary"
+          className=" drop-shadow-custom"
           onClick={() => setContactPage(false)}
         >
           Contact Us

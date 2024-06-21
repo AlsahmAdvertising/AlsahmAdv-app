@@ -7,7 +7,7 @@ const Progress = ({ currentPage }: { currentPage: number }) => {
     "-translate-x-3/4",
     "-translate-x-1/2",
     "-translate-x-1/4",
-    "-translate-x-0",
+    "-translate-x-[2%]",
   ];
   const pathname = usePathname();
 
@@ -15,7 +15,7 @@ const Progress = ({ currentPage }: { currentPage: number }) => {
     !pathname.includes("categories") && (
       <nav className="bg-transparent  transition-all  items-center justify-center h-2 sticky top-0 z-[99999]">
         <span
-          className={`absolute bg-white border border-[#3e7099] bottom-0 left-0  rounded-lg w-full  h-[90%]  ${classNames[currentPage]} duration-1000 ease-in-out  transition-all  `}
+          className={`absolute bg-white border border-primary bottom-0 rounded-sm w-[102%]  h-[90%]  ${classNames[currentPage]} duration-1000 ease-in-out  transition-all  `}
         ></span>
       </nav>
     )

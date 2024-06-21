@@ -21,27 +21,24 @@ const SlideList = ({ OldCategories }: { OldCategories: React.ReactNode }) => {
 
   const elements = [
     {
-      name: "Category 1",
-      description:
-        " rocks and minerals that have been worn down by constant pounding by wind and waves",
+      name: "Signs",
+      description: "Elevate Your Brand - Billboard Magic!",
       backgroundImage:
-        "bg-[url('https://images.unsplash.com/photo-1647675975434-864e1c3fc98d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
+        "bg-[url('https://images.unsplash.com/photo-1521087845985-bb33bd132825?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
       path: "/categories?category=Potato1",
     },
     {
-      name: "Category 2",
-      description:
-        " rocks and minerals that have been worn down by constant pounding by wind and waves",
+      name: "Business Cards",
+      description: "Your Business Card, Your First Impression!",
       backgroundImage:
-        "bg-[url('https://images.unsplash.com/photo-1613909207039-6b173b755cc1?q=80&w=2147&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
+        "bg-[url('https://images.unsplash.com/photo-1599590984817-0c15f31b1fa5?q=80&w=1744&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
       path: "/categories?category=Potato2",
     },
     {
-      name: "Category 3",
-      description:
-        " rocks and minerals that have been worn down by constant pounding by wind and waves",
+      name: "Multimedia",
+      description: "Pixels in Motion - Our Multimedia Magic!",
       backgroundImage:
-        "bg-[url('https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
+        "bg-[url('https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=1862&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
       path: "/categories?category=Potato3",
     },
   ];

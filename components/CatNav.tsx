@@ -20,9 +20,9 @@ export default function CatNav() {
 
   return (
     <>
-      <div className="flex drop-shadow-sm  w-screen  mt-9 z-[999]  justify-center lg:mr-6 ">
+      <div className="flex drop-shadow-sm w-screen  mt-9 z-[10] overflow-visible  justify-center lg:mr-6 ">
         <div
-          className="category  items-centers w-[60%] lg:w-[50%]  "
+          className="category items-centers bg-accent w-[60%] lg:w-[50%] border-2 border-primary shadow-primary_center rounded-xl"
           ref={itemRef}
           onMouseDown={(e) => {
             setIsMouseDown(true);
@@ -60,7 +60,7 @@ export default function CatNav() {
           }}
         >
           {Array.from({ length: 30 }).map((_, index) => (
-            <div key={index} className="category-slide  flex justify-between">
+            <div key={index} className="category-slide  flex justify-between ">
               {tabs.map((tab, tabIndex) => (
                 <CatTabs
                   key={tabIndex}

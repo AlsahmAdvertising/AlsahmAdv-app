@@ -51,30 +51,38 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="h-[100vh] w-[100%] absolute top-0 left-0 overlay bg-[#0e1618] flex justify-center items-end pb-[4%] sm:pb-[1%]"
+      className="h-[100vh] w-[100%] absolute top-0 left-0 overlay bg-secondary flex justify-center items-end pb-[4%] sm:pb-[1%]"
     >
       <div id="notebook-paper" className="h-[85%] w-[60%] ">
         <header className="h-1/5 w-full bg-[#c9c9c3] absolute top-0 left-0 z-[2]">
-          <h1 className="text-black  hand-written-italic drop-shadow-custom font-semibold text-2xl md:text-4xl md:leading-[42px] mt-9 md:mt-8 ml-[10%]">
+          <h1 className="text-black  hand-written drop-shadow-custom font-semibold text-2xl md:text-4xl md:leading-[42px] mt-9 md:mt-8 ml-[10%]">
             Get in touch
           </h1>
         </header>
-        <div className="text-black left-[10.5%] top-[20%] leading-[30px] absolute hand-written-italic //hand-written drop-shadow-white">
-          <a
-            target="blank"
-            href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
-            className=" underline"
-          >
-            {"Location link"}
-          </a>
-          <p>{"  Phone: 0911232441"}</p>
-          <a
-            target="blank"
-            href="https://www.facebook.com/zuck/"
-            className=" underline"
-          >
-            {"  Facebook"}
-          </a>
+        <div className="text-black left-[10.5%] top-[20%] leading-[30px] absolute drop-shadow-white">
+          <p className="hand-written">
+            {"Visit us at: "}
+            <a
+              target="blank"
+              href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
+              className=" underline hand-written"
+            >
+              {"Location link"}
+            </a>
+          </p>
+          <p className="hand-written">
+            {"Want to be our client? Give us a call 0911232441"}
+          </p>
+          <p className="hand-written">
+            {"Check what we are up to in our page at "}
+            <a
+              target="blank"
+              href="https://www.facebook.com/zuck/"
+              className=" underline hand-written"
+            >
+              {"  Facebook"}
+            </a>
+          </p>
         </div>
       </div>
 
@@ -155,129 +163,8 @@ const Contact = () => {
           <div className="btm transition-all rounded-b-2xl  duration-700 absolute w-full h-full bg-[#0e1618] [clip-path:polygon(50%_50%,_100%_100%,_0_100%)]"></div>
         </div>
       </div>
-      {/* <footer className="w-full h-[30%]  bg-gradient-to-tl from-[#00030F] to-primary border-t-primary border-t-2 self-end flex justify-around items-center">
-        <p className="text-white drop-shadow-custom font-semibold text-lg">
-          Phone: 0911232441
-        </p>
-        <a
-          target="blank"
-          href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
-          className="text-white drop-shadow-custom font-semibold text-lg underline"
-        >
-          Location link
-        </a>
-        <a
-          target="blank"
-          href="https://www.facebook.com/zuck/"
-          className="text-white drop-shadow-custom font-semibold text-lg underline"
-        >
-          Facebook
-        </a>
-      </footer> */}
     </section>
   );
 };
 
 export default Contact;
-
-// return (
-//   <section id="contact" className="h-[100vh] w-[100%] grid snap-start">
-//     <div
-//       onClick={() => {
-//         setSelected((prev) => !prev);
-//       }}
-//       className="self-end xl:self-end  overflow-visible justify-self-center drop-shadow-custom_black"
-//     >
-//       <div className="relative bg-black w-[95vw] md:w-[600px]  overflow-visible xl:w-[800px] group transition-all duration-700 aspect-video flex items-center justify-center">
-//         <div className="flex flex-col items-center  py-5 justify-start bg-white w-[99%] h-[99%] absolute"></div>
-//         <form
-//           ref={form}
-//           onSubmit={sendEmail}
-//           className={`transition-all bg-white  overflow-visible ease-in-out flex flex-col items-center py-5 justify-start w-[99%] h-[99%] absolute ${
-//             selected
-//               ? "-translate-y-20 md:-translate-y-16 duration-[2000ms]"
-//               : " duration-300"
-//           }`}
-//         >
-//           <p
-//             className="text-xl sm:text-2xl font-semibold text-neutral-800"
-//             onClick={(e) => {
-//               e.stopPropagation();
-//             }}
-//           >
-//             Send email
-//           </p>
-//           <input
-//             onChange={(e) => setEmailInput(e.target.value)}
-//             value={emailInput}
-//             onClick={(e) => {
-//               e.stopPropagation();
-//             }}
-//             name="user_email"
-//             type="email"
-//             placeholder="Email"
-//             className="w-60"
-//             required
-//           ></input>
-//           <textarea
-//             onChange={(e) => setContentInput(e.target.value)}
-//             value={contentInput}
-//             required
-//             onClick={(e) => {
-//               e.stopPropagation();
-//             }}
-//             name="message"
-//             placeholder="Content"
-//             className="mt-2 w-60 resize-none"
-//           ></textarea>
-//           <button
-//             className="text-neutral-800 border-b-2 hover:border-neutral-800"
-//             disabled={disable}
-//             onClick={(e) => {
-//               e.stopPropagation();
-//             }}
-//           >
-//             Send
-//           </button>
-//         </form>
-//         <p
-//           className={`bg-rose-500 select-none text-red-800 w-12 md:w-14 xl:w-16 aspect-square rounded-full z-40 text-[10px] md:text-[14px] xl:text-[18px] flex items-center justify-center font-semibold [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] transition-all duration-1000 border-4 border-rose-900 ${
-//             selected ? "rotate-180 scale-0 opacity-0" : ""
-//           }`}
-//         >
-//           Email
-//         </p>
-//         <div
-//           className={`transition-all  delay-200 ease-out bg-neutral-800 absolute w-full h-full  ${
-//             selected
-//               ? "duration-100 [clip-path:polygon(50%_0%,_100%_0,_0_0)]"
-//               : "duration-1000 [clip-path:polygon(50%_50%,_100%_0,_0_0)]"
-//           }`}
-//         ></div>
-//         <div className="lft transition-all duration-700 absolute w-full h-full bg-neutral-900 [clip-path:polygon(50%_50%,_0_0,_0_100%)]"></div>
-//         <div className="rgt transition-all duration-700 absolute w-full h-full bg-neutral-800 [clip-path:polygon(50%_50%,_100%_0,_100%_100%)]"></div>
-//         <div className="btm transition-all duration-700 absolute w-full h-full bg-neutral-900 [clip-path:polygon(50%_50%,_100%_100%,_0_100%)]"></div>
-//       </div>
-//     </div>
-
-//     <footer className="w-full h-[30%]  bg-gradient-to-r to- from-primary border-t-primary border-t-2 self-end flex justify-around items-center">
-//       <p className="text-white drop-shadow-custom font-semibold text-lg">
-//         Phone: 0911232441
-//       </p>
-//       <a
-//         target="blank"
-//         href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
-//         className="text-white drop-shadow-custom font-semibold text-lg underline"
-//       >
-//         Location link
-//       </a>
-//       <a
-//         target="blank"
-//         href="https://www.facebook.com/zuck/"
-//         className="text-white drop-shadow-custom font-semibold text-lg underline"
-//       >
-//         Facebook
-//       </a>
-//     </footer>
-//   </section>
-// );

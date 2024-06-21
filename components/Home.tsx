@@ -22,7 +22,7 @@ const Home = ({ currentPage }: { currentPage: number }) => {
 
   return (
     <section
-      className={`bg-black z-50 page-section w-full h-full flex items-center justify-center overflow-hidden absolute top-0 left-0  page-section ${
+      className={`bg-secondary z-50 page-section w-full h-full flex items-center justify-center overflow-hidden absolute top-0 left-0  page-section ${
         currentPage >= 1 ? "-translate-y-[100%]" : ""
       }`}
     >
@@ -45,7 +45,7 @@ const Home = ({ currentPage }: { currentPage: number }) => {
       ></iframe>
 
       <h1 className="text-white z-10 h-full w-full flex justify-center items-center text-5xl font-bold select-none">
-        AlsahmAdv
+        Alsahm Advertisement
       </h1>
     </section>
   );
