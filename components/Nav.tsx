@@ -26,7 +26,7 @@ const Nav = ({
 
   return (
     <div
-      className={`fixed pt-4 md:pt-2 md:px-10 px-5 w-full flex justify-between font-serif z-[999] text-white md:py-8 `}
+      className={`fixed my-4 pr-10 pl-8 w-full flex justify-between font-serif z-[999] text-white  `}
     >
       <Link
         onClick={() => {

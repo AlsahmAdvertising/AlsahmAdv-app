@@ -20,9 +20,9 @@ export default function CatNav() {
 
   return (
     <>
-      <div className="flex drop-shadow-sm w-screen  mt-9 z-[10] overflow-visible  justify-center lg:mr-6 ">
+      <div className="flex drop-shadow-sm w-screen  mt-16 z-[10] overflow-visible   justify-center lg:mr-6 ">
         <div
-          className="category items-centers bg-accent w-[60%] lg:w-[50%] border-2 border-primary shadow-primary_center rounded-xl"
+          className="category items-centers bg-secondary w-[60%] lg:w-[50%] border-2 border-white shadow-primary_around"
           ref={itemRef}
           onMouseDown={(e) => {
             setIsMouseDown(true);

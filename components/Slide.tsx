@@ -41,7 +41,7 @@ const Slide = ({
               <span className="circle" aria-hidden="true">
                 <span className="icon arrow overflow-visible"></span>
               </span>
-              <span className="button-text drop-shadow-custom_black_center hover:drop-shadow-none">
+              <span className="button-text drop-shadow-custom_black_center hover:drop-shadow-none duration-0">
                 Explore
               </span>
             </button>
