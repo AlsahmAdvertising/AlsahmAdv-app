@@ -1,3 +1,7 @@
+"use client";
+
+import useStore from "@/app/state/store";
+import elements from "@/helper/elements";
 import React, { useState, useEffect } from "react";
 
 const Slide = ({
@@ -6,7 +10,6 @@ const Slide = ({
   description,
   length,
   index,
-  currentPage,
   path,
 }: {
   name: string;
@@ -14,9 +17,56 @@ const Slide = ({
   description: string;
   length: number;
   index: number;
-  currentPage: number;
   path: string;
 }) => {
+  const currentPage = useStore((state) => state.currentPage);
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
+  const setIsCategories = useStore((state) => state.setIsCategories);
+
+  useEffect(() => {
+    let start: number;
+    let end: number;
+    const handleStart = (e: TouchEvent) => {
+      const touchMove = e.touches[0];
+      start = touchMove.clientY;
+    };
+    const handleEnd = (e: TouchEvent) => {
+      const touchMove = e.changedTouches[0];
+      end = touchMove.clientY;
+      if (start - end > 0 && currentPage < elements.length + 1) {
+        setCurrentPage(currentPage + 1);
+      } else if (start - end < 0 && currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+        setIsCategories(true);
+      }
+    };
+    const timeoutID = setTimeout(() => {
+      window.addEventListener("touchstart", handleStart);
+      window.addEventListener("touchend", handleEnd);
+    }, 300);
+
+    const handleScroll = (e: WheelEvent) => {
+      const delta = e.deltaY;
+      if (delta > 0 && currentPage < elements.length + 1) {
+        setCurrentPage(currentPage + 1);
+      } else if (delta < 0 && currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+        setIsCategories(true);
+      }
+    };
+    const timeout = setTimeout(() => {
+      window.addEventListener("wheel", handleScroll);
+    }, 700);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      clearTimeout(timeout);
+      window.removeEventListener("touchstart", handleStart);
+      window.removeEventListener("touchend", handleEnd);
+      clearTimeout(timeoutID);
+    };
+  }, [currentPage, setIsCategories, setCurrentPage]);
+
   return (
     <section
       className={`page-section w-full z-10 bg-secondary   absolute top-0 left-0  page-section ${
@@ -36,7 +86,9 @@ const Slide = ({
             </p>
             <button
               className="learn-more pl-1 "
-              onClick={() => (window.location.href = path)}
+              onClick={() =>
+                (window.location.href = `/categories?category=${path}`)
+              }
             >
               <span className="circle" aria-hidden="true">
                 <span className="icon arrow overflow-visible"></span>

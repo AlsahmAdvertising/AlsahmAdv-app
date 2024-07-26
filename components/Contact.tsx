@@ -1,10 +1,13 @@
 "use client";
 
+import useStore from "@/app/state/store";
 import emailjs from "@emailjs/browser";
 import "dotenv/config";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Contact = () => {
+  const setIsCategories = useStore((state) => state.setIsCategories);
+
   const form = useRef(null);
   const [selected, setSelected] = useState(false);
   const [emailInput, setEmailInput] = useState("");
@@ -48,18 +51,58 @@ const Contact = () => {
         }
       );
   }
+
+  useEffect(() => {
+    let start: number;
+    let end: number;
+    const handleStart = (e: TouchEvent) => {
+      const touchMove = e.touches[0];
+      start = touchMove.clientY;
+    };
+    const handleEnd = (e: TouchEvent) => {
+      const touchMove = e.changedTouches[0];
+      end = touchMove.clientY;
+      if (start - end < 0) {
+        setIsCategories(true);
+      }
+    };
+    const timeoutID = setTimeout(() => {
+      window.addEventListener("touchstart", handleStart);
+      window.addEventListener("touchend", handleEnd);
+    }, 300);
+
+    const handleScroll = (e: WheelEvent) => {
+      const delta = e.deltaY;
+
+      if (delta < 0) {
+        setIsCategories(true);
+      }
+    };
+    const timeout = setTimeout(() => {
+      window.addEventListener("wheel", handleScroll);
+    }, 700);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      clearTimeout(timeout);
+      window.removeEventListener("touchstart", handleStart);
+      window.removeEventListener("touchend", handleEnd);
+      clearTimeout(timeoutID);
+    };
+  }, [, setIsCategories]);
+
   return (
     <section
       id="contact"
       className="h-[100vh] w-[100%] absolute top-0 left-0 overlay bg-secondary flex justify-center items-end pb-[4%] sm:pb-[1%]"
     >
-      <div id="notebook-paper" className="h-[85%] w-[60%] ">
-        <header className="h-1/5 w-full bg-[#c9c9c3] absolute top-0 left-0 z-[2]">
-          <h1 className="text-black  hand-written drop-shadow-custom font-semibold text-2xl md:text-4xl md:leading-[42px] mt-9 md:mt-8 ml-[10%]">
+      <div id="notebook-paper" className="h-[85%] w-[80%] md:w-[60%] ">
+        <header className=" w-full bg-[#c9c9c3] absolute top-0 left-0 z-[2]">
+          <h1 className="text-black  hand-written font-semibold text-2xl md:text-4xl md:leading-[42px] mt-8 ml-[10%]">
             Get in touch
           </h1>
         </header>
-        <div className="text-black left-[10.5%] top-[20%] leading-[30px] absolute drop-shadow-white">
+        <div className="text-black left-[10.5%]  leading-[30px] absolute drop-shadow-white">
           <p className="hand-written">
             {"Visit us at: "}
             <a
@@ -90,10 +133,10 @@ const Contact = () => {
         onClick={() => {
           setSelected((prev) => !prev);
         }}
-        className="overflow-visible bottom-[13%] translate-y-12 rounded-2xl drop-shadow-custom_black absolute z-[5]"
+        className="overflow-visible bottom-[13%] w-[95%] max-w-[600px] aspect-video translate-y-12 rounded-2xl drop-shadow-custom_black absolute z-[5] mb-[4%] md:mb-0"
       >
-        <div className="relative bg-[#413f3f] select-none rounded-2xl   w-[80vw] sm:w-[50vw] max-w-[600px] overflow-visible group transition-all duration-700 aspect-video flex items-center justify-center">
-          <div className="bg-white w-[98%] bottom-0 rounded-2xl h-[50%] absolute"></div>
+        <div className="relative bg-[#413f3f] select-none rounded-2xl   w-full h-full overflow-visible group transition-all duration-700 aspect-video flex items-center justify-center">
+          <div className="bg-white w-[98%] bottom-[1%] rounded-2xl h-[48%] absolute"></div>
           <form
             ref={form}
             onSubmit={sendEmail}

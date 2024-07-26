@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
 import "dotenv/config";
-import SlideList from "@/components/SlideList";
+import Nav from "@/components/Nav";
+import Progress from "@/components/Progress";
+import Contact from "@/components/Contact";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <SlideList OldCategories={children} />
+        <Nav />
+        <Progress />
+
+        <Contact />
+        {children}
       </body>
     </html>
   );

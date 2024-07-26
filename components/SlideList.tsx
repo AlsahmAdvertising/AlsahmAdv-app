@@ -5,43 +5,15 @@ import { usePathname } from "next/navigation";
 import Home from "./Home";
 import Contact from "./Contact";
 import Nav from "./Nav";
-import Categories from "./Categories";
 import Progress from "./Progress";
-const SlideList = ({ OldCategories }: { OldCategories: React.ReactNode }) => {
+import useStore from "@/app/state/store";
+const SlideList = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const pathname = usePathname() ?? "";
-  const [isCategories, setIsCategories] = useState(true);
+  const isCategories = useStore((state) => state.isCategories);
+  const setIsCategories = useStore((state) => state.setIsCategories);
   const [page, setPage] = useState(pathname);
   const [category, setCategory] = useState(false);
-
-  const setContactPage = (state: boolean) => {
-    setCurrentPage(elements.length + 1);
-    setIsCategories(state);
-  };
-
-  const elements = [
-    {
-      name: "Signs",
-      description: "Elevate Your Brand - Billboard Magic!",
-      backgroundImage:
-        "bg-[url('https://images.unsplash.com/photo-1521087845985-bb33bd132825?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
-      path: "/categories?category=Potato1",
-    },
-    {
-      name: "Business Cards",
-      description: "Your Business Card, Your First Impression!",
-      backgroundImage:
-        "bg-[url('https://images.unsplash.com/photo-1599590984817-0c15f31b1fa5?q=80&w=1744&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
-      path: "/categories?category=Potato2",
-    },
-    {
-      name: "Multimedia",
-      description: "Pixels in Motion - Our Multimedia Magic!",
-      backgroundImage:
-        "bg-[url('https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=1862&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
-      path: "/categories?category=Potato3",
-    },
-  ];
 
   useEffect(() => {
     if (pathname === "/categories") {
@@ -51,81 +23,7 @@ const SlideList = ({ OldCategories }: { OldCategories: React.ReactNode }) => {
     }
   }, [page, pathname]);
 
-  useEffect(() => {
-    let start: number;
-    let end: number;
-    const handleStart = (e: TouchEvent) => {
-      const touchMove = e.touches[0];
-      start = touchMove.clientY;
-    };
-    const handleEnd = (e: TouchEvent) => {
-      const touchMove = e.changedTouches[0];
-      end = touchMove.clientY;
-      if (start - end > 0 && currentPage < elements.length + 1) {
-        setCurrentPage(currentPage + 1);
-      } else if (start - end < 0 && currentPage > 0) {
-        setCurrentPage(currentPage - 1);
-        setIsCategories(true);
-      }
-    };
-    const timeoutID = setTimeout(() => {
-      window.addEventListener("touchstart", handleStart);
-      window.addEventListener("touchend", handleEnd);
-    }, 300);
-
-    const handleScroll = (e: WheelEvent) => {
-      const delta = e.deltaY;
-      if (delta > 0 && currentPage < elements.length + 1) {
-        setCurrentPage(currentPage + 1);
-      } else if (delta < 0 && currentPage > 0) {
-        setCurrentPage(currentPage - 1);
-        setIsCategories(true);
-      }
-    };
-    const timeout = setTimeout(() => {
-      window.addEventListener("wheel", handleScroll);
-    }, 700);
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-      clearTimeout(timeout);
-      window.removeEventListener("touchstart", handleStart);
-      window.removeEventListener("touchend", handleEnd);
-      clearTimeout(timeoutID);
-    };
-  }, [currentPage, elements.length]);
-
-  useEffect(() => {}, [currentPage]);
-
-  console.log(currentPage);
-  return (
-    <main className="">
-      <Nav setContactPage={setContactPage} setCurrentPage={setCurrentPage} />
-      <Progress currentPage={currentPage} />
-
-      <Contact />
-
-      {category ? (
-        <Categories isCategories={isCategories} />
-      ) : (
-        <>
-          {elements.reverse().map((element, index) => (
-            <Slide
-              index={index}
-              length={elements.length}
-              key={index}
-              name={element.name}
-              description={element.description}
-              backgroundImage={element.backgroundImage}
-              currentPage={currentPage}
-              path={element.path}
-            />
-          ))}
-          <Home currentPage={currentPage} />
-        </>
-      )}
-    </main>
-  );
+  return null;
 };
 
 export default SlideList;

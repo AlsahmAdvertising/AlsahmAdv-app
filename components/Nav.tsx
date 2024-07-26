@@ -3,26 +3,16 @@ import Link from "next/link";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import React from "react";
 import { usePathname } from "next/navigation";
-import CatNav from "./CatNav";
+import useStore from "@/app/state/store";
+import elements from "@/helper/elements";
 
-const Nav = ({
-  setContactPage,
-  setCurrentPage,
-}: {
-  setCurrentPage: Dispatch<SetStateAction<number>>;
-  setContactPage: (state: boolean) => void;
-}) => {
-  const [categoryNav, setCategoryNav] = useState(false);
+const Nav = () => {
   const pathname = usePathname() ?? "";
   const [page, setPage] = useState(pathname);
 
-  useEffect(() => {
-    if (pathname.includes("categories")) {
-      setCategoryNav(true);
-    } else if (pathname === "/") {
-      setCategoryNav(false);
-    }
-  }, [page, pathname]);
+  const currentPage = useStore((state) => state.currentPage);
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
+  const setIsCategories = useStore((state) => state.setIsCategories);
 
   return (
     <div
@@ -45,7 +35,7 @@ const Nav = ({
           <button
             onClick={() => {
               setCurrentPage(0);
-              setContactPage(true);
+              setIsCategories(true);
             }}
             className=""
           >
@@ -53,8 +43,11 @@ const Nav = ({
           </button>
         ) : (
           <Link
-            onClick={() => setPage(pathname)}
-            href="/categories?category=Potato1"
+            onClick={() => {
+              setPage(pathname);
+              setIsCategories(true);
+            }}
+            href="/categories"
             className=" drop-shadow-custom"
           >
             Our work
@@ -63,7 +56,11 @@ const Nav = ({
 
         <button
           className=" drop-shadow-custom"
-          onClick={() => setContactPage(false)}
+          onClick={() => {
+            setIsCategories(false);
+
+            setCurrentPage(elements.length + 1);
+          }}
         >
           Contact Us
         </button>

@@ -1,7 +1,9 @@
+"use client";
+import useStore from "@/app/state/store";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const Progress = ({ currentPage }: { currentPage: number }) => {
+const Progress = () => {
   const classNames = [
     "-translate-x-full",
     "-translate-x-3/4",
@@ -11,6 +13,7 @@ const Progress = ({ currentPage }: { currentPage: number }) => {
   ];
   const pathname = usePathname();
 
+  const currentPage = useStore((state) => state.currentPage);
   return (
     !pathname.includes("categories") && (
       <nav className="bg-transparent  transition-all  items-center justify-center h-2 sticky top-0 z-[99999]">

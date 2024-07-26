@@ -1,5 +1,7 @@
 "use client";
 
+import useStore from "@/app/state/store";
+import elements from "@/helper/elements";
 import { useEffect, useState } from "react";
 function useIsClient() {
   const [isClient, setIsClient] = useState(false);
@@ -8,9 +10,10 @@ function useIsClient() {
   }, []);
   return isClient;
 }
-const Home = ({ currentPage }: { currentPage: number }) => {
-  const [width, setWidth] = useState(window?.innerWidth || 0);
-  const [height, setHeight] = useState(window?.innerHeight || 0);
+
+const Home = () => {
+  const [width, setWidth] = useState(useIsClient() ? window?.innerWidth : 0);
+  const [height, setHeight] = useState(useIsClient() ? window?.innerHeight : 0);
   const desktop = width > 490;
 
   const reportWin = () => {
@@ -18,7 +21,54 @@ const Home = ({ currentPage }: { currentPage: number }) => {
     setHeight(window.innerHeight);
   };
   if (useIsClient()) window.onresize = reportWin;
-  console.log("resized");
+
+  const currentPage = useStore((state) => state.currentPage);
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
+  const setIsCategories = useStore((state) => state.setIsCategories);
+
+  useEffect(() => {
+    let start: number;
+    let end: number;
+    const handleStart = (e: TouchEvent) => {
+      const touchMove = e.touches[0];
+      start = touchMove.clientY;
+    };
+    const handleEnd = (e: TouchEvent) => {
+      const touchMove = e.changedTouches[0];
+      end = touchMove.clientY;
+      if (start - end > 0 && currentPage < elements.length + 1) {
+        setCurrentPage(currentPage + 1);
+      } else if (start - end < 0 && currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+        setIsCategories(true);
+      }
+    };
+    const timeoutID = setTimeout(() => {
+      window.addEventListener("touchstart", handleStart);
+      window.addEventListener("touchend", handleEnd);
+    }, 300);
+
+    const handleScroll = (e: WheelEvent) => {
+      const delta = e.deltaY;
+      if (delta > 0 && currentPage < elements.length + 1) {
+        setCurrentPage(currentPage + 1);
+      } else if (delta < 0 && currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+        setIsCategories(true);
+      }
+    };
+    const timeout = setTimeout(() => {
+      window.addEventListener("wheel", handleScroll);
+    }, 700);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      clearTimeout(timeout);
+      window.removeEventListener("touchstart", handleStart);
+      window.removeEventListener("touchend", handleEnd);
+      clearTimeout(timeoutID);
+    };
+  }, [currentPage, setIsCategories, setCurrentPage]);
 
   return (
     <section

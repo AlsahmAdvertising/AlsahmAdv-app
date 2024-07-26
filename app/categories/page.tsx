@@ -3,8 +3,13 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import CatNav from "./CatNav";
-const Categories = ({ isCategories }: { isCategories: boolean }) => {
+import CatNav from "@/components/CatNav";
+import useStore from "../state/store";
+import elements from "@/helper/elements";
+const Categories = () => {
+  const isCategories = useStore((state) => state.isCategories);
+  const setIsCategories = useStore((state) => state.setIsCategories);
+
   const [post, setPost] = useState<
     {
       image: string;
@@ -14,7 +19,8 @@ const Categories = ({ isCategories }: { isCategories: boolean }) => {
     }[]
   >();
   const searchParams = useSearchParams();
-  const category = searchParams.get("category");
+  const category = searchParams.get("category") || elements[0].path;
+  console.log(category);
 
   useEffect(() => {
     const hello = async function () {
@@ -31,7 +37,7 @@ const Categories = ({ isCategories }: { isCategories: boolean }) => {
 
   return (
     <section
-      className={`flex items-end flex-col justify-center overlay   bg-secondary h-screen page-section w-full  z-10  absolute top-0 left-0  page-section  ${
+      className={`flex items-end flex-col justify-center overlay bg-secondary h-screen page-section w-full  z-10  absolute top-0 left-0  page-section  ${
         !isCategories ? "-translate-y-[100%]" : ""
       }`}
     >
@@ -51,8 +57,8 @@ const Categories = ({ isCategories }: { isCategories: boolean }) => {
                     src={ele.image}
                     alt="content"
                     width={400}
-                    height={220}
-                    className="rounded-xl fade-in drop-shadow-custom mx-auto w-[400px] h-[220px] object-center"
+                    height={225}
+                    className="rounded-xl fade-in drop-shadow-custom mx-auto h-[225px] min-w-[400]  object-center"
                   />
                 );
               })}

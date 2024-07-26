@@ -4,10 +4,9 @@ import Post from "@/models/posts";
 export const GET = async (req: Request) => {
   const url = new URL(req.url);
   const searchParams = new URLSearchParams(url.searchParams);
-  const category = searchParams.get("category") || "";
+  const category = searchParams.get("category");
   try {
     await connectToDB();
-
     const post = await Post.find({ category: category });
 
     return new NextResponse(JSON.stringify(post), { status: 200 });
