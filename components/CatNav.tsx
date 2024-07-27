@@ -5,10 +5,10 @@ import CatTabs from "./CatTab";
 
 export default function CatNav() {
   const tabs = [
-    { name: "Potato1", icon: navIcon },
-    { name: "Potato2", icon: navIcon },
-    { name: "Potato3", icon: navIcon },
-    { name: "Potato4", icon: navIcon },
+    { name: "Signs", icon: navIcon },
+    { name: "Business Cards", icon: navIcon },
+    { name: "Multimedia", icon: navIcon },
+    { name: "Posters", icon: navIcon },
   ];
   const [selectedTab, setSelectedTab] = useState(tabs[0].name);
   const itemRef = useRef<HTMLDivElement>(null);

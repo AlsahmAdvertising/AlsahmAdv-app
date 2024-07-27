@@ -8,7 +8,6 @@ import elements from "@/helper/elements";
 
 const Nav = () => {
   const pathname = usePathname() ?? "";
-  const [page, setPage] = useState(pathname);
 
   const currentPage = useStore((state) => state.currentPage);
   const setCurrentPage = useStore((state) => state.setCurrentPage);
@@ -21,7 +20,6 @@ const Nav = () => {
       <Link
         onClick={() => {
           setCurrentPage(0);
-          setPage(pathname);
         }}
         href="/"
         className={`font-black 
@@ -44,7 +42,6 @@ const Nav = () => {
         ) : (
           <Link
             onClick={() => {
-              setPage(pathname);
               setIsCategories(true);
             }}
             href="/categories"

@@ -15,7 +15,7 @@ const page = () => {
           name={element.name}
           description={element.description}
           backgroundImage={element.backgroundImage}
-          path={element.path}
+          path={element.name}
         />
       ))}
       <Home />

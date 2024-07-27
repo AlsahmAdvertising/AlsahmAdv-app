@@ -2,6 +2,7 @@
 
 import useStore from "@/app/state/store";
 import elements from "@/helper/elements";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const Slide = ({
@@ -84,11 +85,17 @@ const Slide = ({
             <p className="text-white pb-8 drop-shadow-custom_black_center font-semibold text-lg pl-1 md:text-2xl md:pb-4 md:text-bold">
               {description}
             </p>
-            <button
+            <Link
               className="learn-more pl-1 "
-              onClick={() =>
-                (window.location.href = `/categories?category=${path}`)
-              }
+              onClick={() => {
+                setIsCategories(true);
+              }}
+              href={`/categories?category=${path}`}
+              // onClick={() => {
+              //   setCurrentPage(0);
+              //   setIsCategories(true);
+              //   window.location.href = `/categories?category=${path}`;
+              // }}
             >
               <span className="circle" aria-hidden="true">
                 <span className="icon arrow overflow-visible"></span>
@@ -96,7 +103,7 @@ const Slide = ({
               <span className="button-text drop-shadow-custom_black_center hover:drop-shadow-none duration-0">
                 Explore
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
