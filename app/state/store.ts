@@ -7,7 +7,7 @@ const useStore = create<{
   setCurrentPage: (newCurrent: number) => void;
   setIsCategories: (newState: boolean) => void;
 }>((set) => ({
-  isCategories: false,
+  isCategories: true,
   currentPage: 0,
   setCurrentPage: (newCurrent: number) => {
     set(() => ({

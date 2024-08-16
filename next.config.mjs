@@ -5,7 +5,7 @@ const cspHeader = `
     style-src 'self' 'unsafe-inline' fonts.googleapis.com;
    frame-src player.vimeo.com;
    font-src 'self' fonts.gstatic.com;
-   img-src 'self' images.unsplash.com res.cloudinary.com;
+   img-src 'self' images.unsplash.com;
 `;
 
 const nextConfig = {

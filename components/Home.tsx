@@ -14,7 +14,14 @@ function useIsClient() {
 const Home = () => {
   const [width, setWidth] = useState(useIsClient() ? window?.innerWidth : 0);
   const [height, setHeight] = useState(useIsClient() ? window?.innerHeight : 0);
+  const client = useIsClient();
   const desktop = width > 490;
+
+  useEffect(() => {
+    if (client) {
+      reportWin();
+    }
+  }, [client]);
 
   const reportWin = () => {
     setWidth(window.innerWidth);
@@ -77,6 +84,7 @@ const Home = () => {
       }`}
     >
       <iframe
+        title="Home Video"
         src={
           desktop
             ? "https://player.vimeo.com/video/939643388?autoplay=1&color=ff0179&title=0&byline=0&portrait=0&loop=1&controls=0&muted=1&quality=1080p"

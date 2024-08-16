@@ -48,17 +48,43 @@ const Categories = () => {
           <span className="absolute block animate-slider2 right-0 top-[-100%] w-[2px] h-full bg-white"></span>
           <span className="absolute block animate-slider3 bottom-0 right-[-100%] w-full h-[2px] bg-white"></span>
           <span className="absolute block animate-slider4 left-0 bottom-[-100%] h-full w-[2px] bg-white"></span>
-          <div className="grid gap-5 pt-5  grid-cols-1 md:px-8  min-w-[350px] w-full mt-8  md:gap-10 pb-32 overflow-y-scroll lg:grid-cols-3 p-6 md:grid-cols-2 ">
+          <div className="min-w-[350px] justify-around w-full mt-8 pb-32 overflow-y-scroll px-[2%] flex flex-wrap">
             {post &&
               post.map((ele, index) => {
+                const modifiedUrl = ele.image.split("/");
+                const windowWidth = window.innerWidth;
+                const oneItem = Math.floor(windowWidth * 0.85 * 0.96 * 0.96);
+                const twoItems = Math.floor(
+                  (windowWidth * 0.85 * 0.96 * 0.92) / 2
+                );
+                const threeItems = Math.floor(
+                  (windowWidth * 0.85 * 0.96 * 0.88) / 3
+                );
+                const width =
+                  windowWidth >= 1280
+                    ? threeItems
+                    : windowWidth >= 640
+                    ? twoItems
+                    : oneItem;
+
+                modifiedUrl.splice(
+                  7,
+                  0,
+                  `c_scale,w_${width}`,
+                  "f_auto",
+                  "q_auto"
+                );
+
                 return (
                   <Image
                     key={index}
-                    src={ele.image}
+                    // priority={true}
+                    // fetchPriority="high"
+                    src={modifiedUrl.join("/")}
                     alt="content"
-                    width={400}
-                    height={225}
-                    className="rounded-xl fade-in drop-shadow-custom mx-auto h-[225px] min-w-[400]  object-center"
+                    width={640}
+                    height={360}
+                    className="rounded-xl p-[2%] fade-in drop-shadow-custom w-full sm:w-1/2 xl:w-1/3"
                   />
                 );
               })}

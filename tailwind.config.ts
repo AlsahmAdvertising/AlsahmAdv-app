@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       boxShadow: {
-        primary_inside: " inset 0 30px 50px rgba(15, 187, 255, 0.2)",
+        primary_inside: " inset 0 80px 80px rgba(15, 187, 255, 0.15)",
         primary_around:
           " inset 0 0 50px rgba(15, 187, 255, 0.2), 0 0px 30px 0px rgba(15, 187, 255, 0.3)",
         primary: "0 20px 40px 0px rgba(15, 187, 255, 0.3)",

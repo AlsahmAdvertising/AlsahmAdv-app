@@ -1,6 +1,5 @@
 import Home from "@/components/Home";
 import Slide from "@/components/Slide";
-import SlideList from "@/components/SlideList";
 import elements from "@/helper/elements";
 import React from "react";
 
