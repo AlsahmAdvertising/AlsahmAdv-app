@@ -5,6 +5,7 @@ import "dotenv/config";
 import Nav from "@/components/Nav";
 import Progress from "@/components/Progress";
 import Contact from "@/components/Contact";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <Nav />
-        <Progress />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Nav />
+          <Progress />
 
-        <Contact />
-        {children}
+          <Contact />
+          {children}
+        </Suspense>
       </body>
     </html>
   );
