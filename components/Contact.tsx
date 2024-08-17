@@ -101,34 +101,30 @@ const Contact = () => {
         className="h-[85%] w-[80%] md:w-[60%] text-right  "
       >
         <header className=" w-full bg-[#c9c9c3] absolute top-0 left-0 z-[2]">
-          <h1 className="text-black  hand-written font-semibold text-2xl md:text-4xl md:leading-[42px] mt-8 mr-[12%] ">
+          <h1 className="text-black font-semibold text-2xl md:text-4xl md:leading-[44px] mt-8 mr-[12%] ">
             ابقى على تواصل
           </h1>
         </header>
-        <div className="text-black right-[12.5%]  leading-[30px] absolute drop-shadow-white  w-full">
-          <p className="hand-written  ">
-            {"زرنا على : "}
+        <div className="text-black pl-11 right-[12.5%]  leading-[30px] absolute drop-shadow-white  w-full">
+          <p className="">
+            {"قم بزيارتنا: "}
             <a
               target="blank"
               href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
-              className=" underline hand-written"
+              className=" underline"
             >
-              {"Location link"}
+              رابط الموقع
             </a>
           </p>
-          <p className="hand-written">
-            {"تريد ان تصبح زبوننا؟ اتصل بنا على 0911234567"}
-          </p>
-          <p className="hand-written">
-            {"اطلع على اخر اعمالنا على وسائل التواصل الاجتماعي :"}
-            <a
-              target="blank"
-              href="https://www.facebook.com/zuck/"
-              className=" underline hand-written"
-            >
-              {"  Facebook"}
-            </a>
-          </p>
+          <p>{"تريد ان تصبح زبوننا؟ اتصل بنا على: 0911234567"}</p>
+          <p>{"اطلع على اخر اعمالنا على وسائل التواصل الاجتماعي"}</p>
+          <a
+            target="blank"
+            href="https://www.facebook.com/zuck/"
+            className="underline"
+          >
+            Facebook
+          </a>
         </div>
       </div>
 
@@ -155,7 +151,7 @@ const Contact = () => {
                 e.stopPropagation();
               }}
             >
-              Send email
+              تواصل برسالة
             </p>
             <input
               onChange={(e) => setEmailInput(e.target.value)}
@@ -165,8 +161,8 @@ const Contact = () => {
               }}
               name="user_email"
               type="email"
-              placeholder="Email"
-              className="w-[70%] md:w-[80%] h-[13%] mb-3 text-[10px] md:text-[12px] "
+              placeholder="بريد الكتروني"
+              className="w-[70%] placeholder:text-right md:w-[80%] h-[13%] mb-3 text-[10px] md:text-[12px] "
               required
             ></input>
             <textarea
@@ -177,8 +173,8 @@ const Contact = () => {
                 e.stopPropagation();
               }}
               name="message"
-              placeholder="Content"
-              className="w-[70%] md:w-[80%] h-[25%] pb-3 text-[10px] md:text-[12px] "
+              placeholder="محتوى"
+              className="w-[70%] placeholder:text-right md:w-[80%] h-[25%] pb-3 text-[10px] md:text-[12px] "
             ></textarea>
             <button
               className="text-[#0e1618] text-[13px]  border-b-2 hover:border-[#0e1618] hover:font-semibold"
@@ -187,7 +183,7 @@ const Contact = () => {
                 e.stopPropagation();
               }}
             >
-              Send
+              ارسال
             </button>
           </form>
           <p
@@ -195,7 +191,7 @@ const Contact = () => {
               selected ? "rotate-180 scale-0 opacity-0" : ""
             }`}
           >
-            Email
+            بريد
           </p>
           <div
             className={`transition-all rounded-t-2xl  delay-200 ease-out bg-[#151f22] absolute w-full h-full  ${
