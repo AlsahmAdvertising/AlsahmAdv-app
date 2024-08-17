@@ -8,7 +8,7 @@ const CatTabs = ({
   selectedTab,
   setSelectedTab,
 }: {
-  tab: { name: string; arabic: string; icon: string };
+  tab: { name: string; arabic: string };
   selectedTab: string;
   setSelectedTab: Dispatch<SetStateAction<string>>;
 }) => {

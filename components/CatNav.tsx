@@ -2,14 +2,13 @@
 import React, { useRef, useState } from "react";
 import navIcon from "../assets/navIcon.svg";
 import CatTabs from "./CatTab";
+import elements from "@/helper/elements";
 
 export default function CatNav() {
-  const tabs = [
-    { name: "Signs", arabic: "لافتات", icon: navIcon },
-    { name: "Business Cards", arabic: "كروت اعمال", icon: navIcon },
-    { name: "Multimedia", arabic: "الدعاية المرئية", icon: navIcon },
-    { name: "Posters", arabic: "منشورات", icon: navIcon },
-  ];
+  const tabs = elements.map((element) => {
+    return { arabic: element.name, name: element.category };
+  });
+
   const [selectedTab, setSelectedTab] = useState(tabs[0].name);
   const itemRef = useRef<HTMLDivElement>(null);
   const [isMouseDown, setIsMouseDown] = useState(false);

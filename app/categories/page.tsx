@@ -19,7 +19,7 @@ const Categories = () => {
     }[]
   >();
   const searchParams = useSearchParams();
-  const category = searchParams.get("category") || elements[0].name;
+  const category = searchParams.get("category") || elements[0].category;
 
   useEffect(() => {
     const hello = async function () {
