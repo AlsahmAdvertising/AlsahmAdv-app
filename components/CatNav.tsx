@@ -31,18 +31,12 @@ export default function CatNav() {
               e.pageX - (itemRef.current?.getBoundingClientRect().left || 0)
             );
             setScrollingLeft(itemRef.current?.scrollLeft || 0);
-            console.log(
-              e.pageX - (itemRef.current?.getBoundingClientRect().left || 0),
-              "scrollingLeft"
-            );
           }}
           onMouseLeave={() => {
             setIsMouseDown(false);
-            console.log("leave");
           }}
           onMouseUp={() => {
             setIsMouseDown(false);
-            console.log("up");
           }}
           onMouseMove={(e) => {
             if (!isMouseDown) return;
@@ -55,8 +49,6 @@ export default function CatNav() {
             const walk = x - startX; //scroll-faster
             itemRef.current?.scrollLeft &&
               (itemRef.current.scrollLeft = scrollingLeft - walk);
-            console.log(walk, "walk");
-            console.log(itemRef.current?.scrollLeft, "x");
           }}
         >
           {Array.from({ length: 30 }).map((_, index) => (

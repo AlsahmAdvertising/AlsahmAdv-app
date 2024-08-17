@@ -6,7 +6,6 @@ import Nav from "@/components/Nav";
 import Progress from "@/components/Progress";
 import Contact from "@/components/Contact";
 import { Suspense } from "react";
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Alsahm Advertising",
@@ -21,7 +20,7 @@ export default function RootLayout({
   if (typeof window !== undefined) localStorage.theme = "light";
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body>
         <Suspense fallback={<h1>Loading...</h1>}>
           <Nav />
           <Progress />

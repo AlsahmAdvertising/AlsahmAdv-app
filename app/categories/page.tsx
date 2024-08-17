@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import CatNav from "@/components/CatNav";
@@ -20,7 +20,6 @@ const Categories = () => {
   >();
   const searchParams = useSearchParams();
   const category = searchParams.get("category") || elements[0].name;
-  console.log(category);
 
   useEffect(() => {
     const hello = async function () {
@@ -34,7 +33,6 @@ const Categories = () => {
     };
     hello();
   }, [category]);
-  console.log(post);
   return (
     <section
       className={`flex items-end flex-col justify-center overlay bg-secondary h-screen page-section w-full  z-10  absolute top-0 left-0  page-section  ${
@@ -140,12 +138,12 @@ const Categories = () => {
               post.map((ele, index) => {
                 const modifiedUrl = ele.image.split("/");
                 const windowWidth = window.innerWidth;
-                const oneItem = Math.floor(windowWidth * 0.85 * 0.96 * 0.96);
+                const oneItem = Math.floor(windowWidth * 0.85 * 0.96 * 1);
                 const twoItems = Math.floor(
-                  (windowWidth * 0.85 * 0.96 * 0.92) / 2
+                  (windowWidth * 0.85 * 0.96 * 0.96) / 2
                 );
                 const threeItems = Math.floor(
-                  (windowWidth * 0.85 * 0.96 * 0.88) / 3
+                  (windowWidth * 0.85 * 0.96 * 0.92) / 3
                 );
                 const width =
                   windowWidth >= 1280
