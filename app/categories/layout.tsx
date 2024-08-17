@@ -5,7 +5,7 @@ const layout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <Suspense fallback={<h1>Loading...</h1>}>{children}</Suspense>;
+  return <>{children}</>;
 };
 
 export default layout;
