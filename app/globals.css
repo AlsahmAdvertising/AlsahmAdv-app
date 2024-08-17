@@ -7,7 +7,7 @@
   overflow: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
-
+  color-scheme: only light;
   font-family: "Cairo", serif;
   font-optical-sizing: auto;
   font-style: normal;

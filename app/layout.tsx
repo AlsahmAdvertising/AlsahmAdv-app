@@ -17,7 +17,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (typeof window !== undefined) localStorage.theme = "light";
   return (
     <html lang="en">
       <body>
