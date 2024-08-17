@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 import "dotenv/config";
 import Nav from "@/components/Nav";
 import Progress from "@/components/Progress";
 import Contact from "@/components/Contact";
 import { Suspense } from "react";
+
+const cairo = Cairo({
+  subsets: ["arabic"],
+  variable: "--font-cairo",
+});
 
 export const metadata: Metadata = {
   title: "Alsahm Advertising",
@@ -18,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${cairo.variable} font-sans`}>
       <body>
         <Suspense fallback={<h1>Loading...</h1>}>
           <Nav />

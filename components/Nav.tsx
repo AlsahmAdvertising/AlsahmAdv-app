@@ -9,9 +9,10 @@ import elements from "@/helper/elements";
 const Nav = () => {
   const pathname = usePathname() ?? "";
 
-  const currentPage = useStore((state) => state.currentPage);
   const setCurrentPage = useStore((state) => state.setCurrentPage);
   const setIsCategories = useStore((state) => state.setIsCategories);
+  const setLoading = useStore((state) => state.setLoading);
+  const loading = useStore((state) => state.loading);
 
   return (
     <div
@@ -20,6 +21,7 @@ const Nav = () => {
       <Link
         onClick={() => {
           setCurrentPage(0);
+          setLoading(false);
         }}
         href="/"
         className={`font-black 
@@ -28,7 +30,7 @@ const Nav = () => {
         شعار
       </Link>
 
-      <div className="flex justify-center items-center font-black drop-shadow-custom   gap-x-8  	">
+      <div className="flex justify-center text-center items-center font-black drop-shadow-custom   gap-x-8  	">
         {pathname.includes("categories") ? (
           <button
             onClick={() => {
@@ -39,10 +41,13 @@ const Nav = () => {
           >
             اعمالنا
           </button>
+        ) : loading ? (
+          <h1>...</h1>
         ) : (
           <Link
             onClick={() => {
               setIsCategories(true);
+              setLoading(true);
             }}
             href="/categories"
             className=" drop-shadow-custom"

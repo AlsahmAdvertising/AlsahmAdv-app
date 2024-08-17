@@ -105,7 +105,7 @@ const Contact = () => {
             ابقى على تواصل
           </h1>
         </header>
-        <div className="text-black pl-11 right-[12.5%]  leading-[30px] absolute drop-shadow-white  w-full">
+        <div className="text-black pl-11 right-[12.5%]  leading-[30px] absolute drop-shadow-white">
           <p className="">
             {"قم بزيارتنا: "}
             <a

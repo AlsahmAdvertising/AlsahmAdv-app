@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-cairo)"],
+      },
       boxShadow: {
         primary_inside: " inset 0 80px 80px rgba(15, 187, 255, 0.15)",
         primary_around:
