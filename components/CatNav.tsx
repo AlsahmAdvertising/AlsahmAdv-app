@@ -5,10 +5,10 @@ import CatTabs from "./CatTab";
 
 export default function CatNav() {
   const tabs = [
-    { name: "Signs", icon: navIcon },
-    { name: "Business Cards", icon: navIcon },
-    { name: "Multimedia", icon: navIcon },
-    { name: "Posters", icon: navIcon },
+    { name: "Signs", arabic: "لافتات", icon: navIcon },
+    { name: "Business Cards", arabic: "كروت اعمال", icon: navIcon },
+    { name: "Multimedia", arabic: "الدعاية المرئية", icon: navIcon },
+    { name: "Posters", arabic: "منشورات", icon: navIcon },
   ];
   const [selectedTab, setSelectedTab] = useState(tabs[0].name);
   const itemRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,7 @@ export default function CatNav() {
     <>
       <div className="flex drop-shadow-sm w-screen  mt-16 z-[10] overflow-visible   justify-center lg:mr-6 ">
         <div
-          className="category items-centers bg-secondary w-[60%] lg:w-[50%] border-2 border-white shadow-primary_around"
+          className="category items-centers bg-secondary w-[80%] sm:w-[70%]  lg:w-[50%] md:w-[60%] border-2 border-white shadow-primary_around"
           ref={itemRef}
           onMouseDown={(e) => {
             setIsMouseDown(true);

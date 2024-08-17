@@ -8,7 +8,7 @@ const CatTabs = ({
   selectedTab,
   setSelectedTab,
 }: {
-  tab: { name: string; icon: string };
+  tab: { name: string; arabic: string; icon: string };
   selectedTab: string;
   setSelectedTab: Dispatch<SetStateAction<string>>;
 }) => {
@@ -23,7 +23,7 @@ const CatTabs = ({
           router.push(`/categories?category=${tab.name}`);
         }}
       >
-        {tab.name}
+        {tab.arabic}
       </button>
     </>
   );

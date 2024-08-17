@@ -78,32 +78,34 @@ const Slide = ({
         <div
           className={`${backgroundImage} h-full bg-cover overlay bg-center relative `}
         >
-          <div className=" absolute top-[35%] max-w-[80%] left-[4%]  md:left-[10%] md:max-w-[65%] ">
-            <h1 className="text-5xl drop-shadow-custom_black_center pl-1  text-white font-bold	pb-8 md:text-8xl sm:text-6xl md:pb-4	">
+          <div className=" absolute top-[35%] max-w-[80%] right-[4%]    md:right-[10%] md:max-w-[65%] ">
+            <h1 className="text-5xl drop-shadow-custom_black_center pl-1  text-right text-white font-bold	pb-8 md:text-8xl sm:text-6xl md:pb-4	">
               {name}
             </h1>
-            <p className="text-white pb-8 drop-shadow-custom_black_center font-semibold text-lg pl-1 md:text-2xl md:pb-4 md:text-bold">
+            <p className="text-white pb-8 drop-shadow-custom_black_center text-right  font-semibold text-lg  md:text-2xl md:pb-4 md:text-bold">
               {description}
             </p>
-            <Link
-              className="learn-more pl-1 "
-              onClick={() => {
-                setIsCategories(true);
-              }}
-              href={`/categories?category=${path}`}
-              // onClick={() => {
-              //   setCurrentPage(0);
-              //   setIsCategories(true);
-              //   window.location.href = `/categories?category=${path}`;
-              // }}
-            >
-              <span className="circle" aria-hidden="true">
-                <span className="icon arrow overflow-visible"></span>
-              </span>
-              <span className="button-text drop-shadow-custom_black_center hover:drop-shadow-none duration-0">
-                Explore
-              </span>
-            </Link>
+            <div className="w-full flex justify-end">
+              <Link
+                className="learn-more pl-1 w-full  rotate-180"
+                onClick={() => {
+                  setIsCategories(true);
+                }}
+                href={`/categories?category=${path}`}
+                // onClick={() => {
+                //   setCurrentPage(0);
+                //   setIsCategories(true);
+                //   window.location.href = `/categories?category=${path}`;
+                // }}
+              >
+                <span className="circle" aria-hidden="true">
+                  <span className="icon arrow overflow-visible"></span>
+                </span>
+                <span className="button-text rotate-180 drop-shadow-custom_black_center hover:drop-shadow-none duration-0">
+                  استكشف
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

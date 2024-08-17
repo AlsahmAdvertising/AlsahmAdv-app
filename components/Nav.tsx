@@ -23,12 +23,12 @@ const Nav = () => {
         }}
         href="/"
         className={`font-black 
-      ${" drop-shadow-custom text-xl sm:text-3xl md:text-5xl ld:text-6xl"}`}
+      ${" drop-shadow-custom text-xl   "}`}
       >
-        Home
+        شعار
       </Link>
 
-      <div className="flex justify-center items-center md:font-black drop-shadow-custom  gap-x-2 md:gap-x-8  	">
+      <div className="flex justify-center items-center font-black drop-shadow-custom   gap-x-8  	">
         {pathname.includes("categories") ? (
           <button
             onClick={() => {
@@ -37,7 +37,7 @@ const Nav = () => {
             }}
             className=""
           >
-            Our work
+            اعمالنا
           </button>
         ) : (
           <Link
@@ -47,7 +47,7 @@ const Nav = () => {
             href="/categories"
             className=" drop-shadow-custom"
           >
-            Our work
+            اعمالنا
           </Link>
         )}
 
@@ -59,7 +59,7 @@ const Nav = () => {
             setCurrentPage(elements.length + 1);
           }}
         >
-          Contact Us
+          تواصل معنا
         </button>
       </div>
     </div>

@@ -6,7 +6,6 @@ import Nav from "@/components/Nav";
 import Progress from "@/components/Progress";
 import Contact from "@/components/Contact";
 import { Suspense } from "react";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,6 +18,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (typeof window !== undefined) localStorage.theme = "light";
   return (
     <html lang="en">
       <body className={`${inter.className}`}>

@@ -94,17 +94,20 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="h-[100vh] w-[100%] absolute top-0 left-0 overlay bg-secondary flex justify-center items-end pb-[4%] sm:pb-[1%]"
+      className="h-[100vh] w-[100%] absolute top-0 left-0 overlay bg-secondary flex justify-center items-end pb-[4%] text-right sm:pb-[1%]"
     >
-      <div id="notebook-paper" className="h-[85%] w-[80%] md:w-[60%] ">
+      <div
+        id="notebook-paper"
+        className="h-[85%] w-[80%] md:w-[60%] text-right  "
+      >
         <header className=" w-full bg-[#c9c9c3] absolute top-0 left-0 z-[2]">
-          <h1 className="text-black  hand-written font-semibold text-2xl md:text-4xl md:leading-[42px] mt-8 ml-[10%]">
-            Get in touch
+          <h1 className="text-black  hand-written font-semibold text-2xl md:text-4xl md:leading-[42px] mt-8 mr-[12%] ">
+            ابقى على تواصل
           </h1>
         </header>
-        <div className="text-black left-[10.5%]  leading-[30px] absolute drop-shadow-white">
-          <p className="hand-written">
-            {"Visit us at: "}
+        <div className="text-black right-[12.5%]  leading-[30px] absolute drop-shadow-white  w-full">
+          <p className="hand-written  ">
+            {"زرنا على : "}
             <a
               target="blank"
               href="https://earth.google.com/web/search/NVIDIA+Headquarters,+San+Tomas+Expressway,+Santa+Clara,+CA,+USA/@37.37061431,-121.96718571,34.41619515a,665.89766774d,35y,-28.93143153h,32.48520397t,0r/data=CqsBGoABEnoKJTB4ODA4ZmNhMjcwMmM0ODBkYjoweDc2NTI3ODQ3Yjk1ZTA4YzkZkQgyp3CvQkAhbIJebuZ9XsAqP05WSURJQSBIZWFkcXVhcnRlcnMsIFNhbiBUb21hcyBFeHByZXNzd2F5LCBTYW50YSBDbGFyYSwgQ0EsIFVTQRgCIAEiJgokCTkAdFXcKytAEdT25EkkBCtAGbO_yYWv9x1AIfttnh7wrR1AOgMKATA"
@@ -114,10 +117,10 @@ const Contact = () => {
             </a>
           </p>
           <p className="hand-written">
-            {"Want to be our client? Give us a call 0911232441"}
+            {"تريد ان تصبح زبوننا؟ اتصل بنا على 0911234567"}
           </p>
           <p className="hand-written">
-            {"Check what we are up to in our page at "}
+            {"اطلع على اخر اعمالنا على وسائل التواصل الاجتماعي :"}
             <a
               target="blank"
               href="https://www.facebook.com/zuck/"

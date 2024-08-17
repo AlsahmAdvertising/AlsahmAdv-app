@@ -102,8 +102,8 @@ const Home = () => {
         }`}
       ></iframe>
 
-      <h1 className="text-white z-10 h-full w-full flex justify-center items-center text-5xl font-bold select-none">
-        Alsahm Advertisement
+      <h1 className="text-white z-10 h-full w-full flex justify-center text-center items-center sm:text-7xl text-3xl  font-bold select-none">
+        السهم لالدعاية و الاعلام
       </h1>
     </section>
   );
