@@ -97,14 +97,14 @@ const Categories = () => {
 
                 return (
                   <Image
-                    key={index}
+                    key={modifiedUrl.join('/')}
                     // priority={true}
                     // fetchPriority="high"
                     src={modifiedUrl.join("/")}
                     alt="content"
                     width={640}
                     height={360}
-                    className="rounded-xl p-[2%] fade-in drop-shadow-custom w-[90%] sm:w-1/2 xl:w-1/3"
+                    className="rounded-xl p-[2%] drop-shadow-custom w-[90%] sm:w-1/2 xl:w-1/3"
                   />
                 );
               })
